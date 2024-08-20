@@ -1,0 +1,1108 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\almog\\source\\repos\\RestFlow\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B3037EEB-DDD6-47EA-89E7-7439322E277A}|RestFlow.Tests\\RestFlow.Tests.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.tests\\ordertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3037EEB-DDD6-47EA-89E7-7439322E277A}|RestFlow.Tests\\RestFlow.Tests.csproj|solutionrelative:restflow.tests\\ordertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|solutionrelative:restflow.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.api\\controllers\\dishcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|solutionrelative:restflow.api\\controllers\\dishcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.api\\controllers\\tablecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|solutionrelative:restflow.api\\controllers\\tablecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3037EEB-DDD6-47EA-89E7-7439322E277A}|RestFlow.Tests\\RestFlow.Tests.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.tests\\waitertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3037EEB-DDD6-47EA-89E7-7439322E277A}|RestFlow.Tests\\RestFlow.Tests.csproj|solutionrelative:restflow.tests\\waitertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.api\\controllers\\waitercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|solutionrelative:restflow.api\\controllers\\waitercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.bl\\services\\waiterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|solutionrelative:restflow.bl\\services\\waiterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3037EEB-DDD6-47EA-89E7-7439322E277A}|RestFlow.Tests\\RestFlow.Tests.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.tests\\tabletests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3037EEB-DDD6-47EA-89E7-7439322E277A}|RestFlow.Tests\\RestFlow.Tests.csproj|solutionrelative:restflow.tests\\tabletests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.api\\dto\\tabledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|solutionrelative:restflow.api\\dto\\tabledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3037EEB-DDD6-47EA-89E7-7439322E277A}|RestFlow.Tests\\RestFlow.Tests.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.tests\\ingredienttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3037EEB-DDD6-47EA-89E7-7439322E277A}|RestFlow.Tests\\RestFlow.Tests.csproj|solutionrelative:restflow.tests\\ingredienttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.bl\\services\\iingredientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|solutionrelative:restflow.bl\\services\\iingredientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.api\\controllers\\ingredientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|solutionrelative:restflow.api\\controllers\\ingredientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3037EEB-DDD6-47EA-89E7-7439322E277A}|RestFlow.Tests\\RestFlow.Tests.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.tests\\dishtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3037EEB-DDD6-47EA-89E7-7439322E277A}|RestFlow.Tests\\RestFlow.Tests.csproj|solutionrelative:restflow.tests\\dishtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.api\\dto\\dishdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|solutionrelative:restflow.api\\dto\\dishdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.api\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|solutionrelative:restflow.api\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.api\\dto\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|solutionrelative:restflow.api\\dto\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3037EEB-DDD6-47EA-89E7-7439322E277A}|RestFlow.Tests\\RestFlow.Tests.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.tests\\authtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3037EEB-DDD6-47EA-89E7-7439322E277A}|RestFlow.Tests\\RestFlow.Tests.csproj|solutionrelative:restflow.tests\\authtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|solutionrelative:restflow.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.dal\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|solutionrelative:restflow.dal\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.bl\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|solutionrelative:restflow.bl\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.bl\\services\\dishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|solutionrelative:restflow.bl\\services\\dishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|solutionrelative:restflow.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|solutionrelative:restflow.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.bl\\services\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|solutionrelative:restflow.bl\\services\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.dal\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|solutionrelative:restflow.dal\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.dal\\repositories\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|solutionrelative:restflow.dal\\repositories\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.bl\\factory\\modelfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|solutionrelative:restflow.bl\\factory\\modelfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.dal\\entities\\table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|solutionrelative:restflow.dal\\entities\\table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.bl\\services\\tableservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|solutionrelative:restflow.bl\\services\\tableservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.dal\\repositories\\tablerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|solutionrelative:restflow.dal\\repositories\\tablerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.dal\\repositories\\waiterrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|solutionrelative:restflow.dal\\repositories\\waiterrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|solutionrelative:restflow.api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.api\\dto\\adddishdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|solutionrelative:restflow.api\\dto\\adddishdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.api\\dto\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|solutionrelative:restflow.api\\dto\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.bl\\factory\\imodelfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|solutionrelative:restflow.bl\\factory\\imodelfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.bl\\services\\itableservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|solutionrelative:restflow.bl\\services\\itableservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.dal\\repositories\\itablerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|solutionrelative:restflow.dal\\repositories\\itablerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.api\\dto\\waiterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|solutionrelative:restflow.api\\dto\\waiterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.dal\\entities\\waiter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|solutionrelative:restflow.dal\\entities\\waiter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.api\\dto\\waiterlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|solutionrelative:restflow.api\\dto\\waiterlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.api\\dto\\ingredientdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|solutionrelative:restflow.api\\dto\\ingredientdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.bl\\services\\iwaiterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|solutionrelative:restflow.bl\\services\\iwaiterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.dal\\repositories\\iwaiterrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|solutionrelative:restflow.dal\\repositories\\iwaiterrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.bl\\services\\ingredientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|solutionrelative:restflow.bl\\services\\ingredientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.dal\\repositories\\dishrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|solutionrelative:restflow.dal\\repositories\\dishrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.dal\\repositories\\idishrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|solutionrelative:restflow.dal\\repositories\\idishrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.bl\\services\\idishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|solutionrelative:restflow.bl\\services\\idishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.dal\\repositories\\ingredientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|solutionrelative:restflow.dal\\repositories\\ingredientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.bl\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|solutionrelative:restflow.bl\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.dal\\repositories\\iingredientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|solutionrelative:restflow.dal\\repositories\\iingredientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.bl\\services\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|solutionrelative:restflow.bl\\services\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.dal\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|solutionrelative:restflow.dal\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.bl\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|solutionrelative:restflow.bl\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.dal\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|solutionrelative:restflow.dal\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.dal\\repositories\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|solutionrelative:restflow.dal\\repositories\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.dal\\repositories\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|solutionrelative:restflow.dal\\repositories\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.bl\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA6510EB-08D6-41CF-BB41-8F8F75797666}|RestFlow.BL\\RestFlow.BL.csproj|solutionrelative:restflow.bl\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.dal\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|solutionrelative:restflow.dal\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.dal\\repositories\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|solutionrelative:restflow.dal\\repositories\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.dal\\data\\authdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|solutionrelative:restflow.dal\\data\\authdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.dal\\data\\datadbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|solutionrelative:restflow.dal\\data\\datadbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.api\\restflow.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|solutionrelative:restflow.api\\restflow.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.api\\restflow.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{47F52061-FD7A-489C-BCE8-79303FBDC6AF}|RestFlow.API\\RestFlow.API.csproj|solutionrelative:restflow.api\\restflow.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|c:\\users\\almog\\source\\repos\\restflow\\restflow.dal\\restflow.dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}|RestFlow.DAL\\RestFlow.DAL.csproj|solutionrelative:restflow.dal\\restflow.dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 240,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DishController.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\Controllers\\DishController.cs",
+              "RelativeDocumentMoniker": "RestFlow.API\\Controllers\\DishController.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\Controllers\\DishController.cs",
+              "RelativeToolTip": "RestFlow.API\\Controllers\\DishController.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T07:41:49.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrderTests.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.Tests\\OrderTests.cs",
+              "RelativeDocumentMoniker": "RestFlow.Tests\\OrderTests.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.Tests\\OrderTests.cs",
+              "RelativeToolTip": "RestFlow.Tests\\OrderTests.cs",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAYwK8AAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T07:12:39.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WaiterTests.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.Tests\\WaiterTests.cs",
+              "RelativeDocumentMoniker": "RestFlow.Tests\\WaiterTests.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.Tests\\WaiterTests.cs",
+              "RelativeToolTip": "RestFlow.Tests\\WaiterTests.cs",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAAAJwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T07:06:39.759Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TableTests.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.Tests\\TableTests.cs",
+              "RelativeDocumentMoniker": "RestFlow.Tests\\TableTests.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.Tests\\TableTests.cs*",
+              "RelativeToolTip": "RestFlow.Tests\\TableTests.cs*",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAQwGsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T06:59:42.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IngredientTests.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.Tests\\IngredientTests.cs",
+              "RelativeDocumentMoniker": "RestFlow.Tests\\IngredientTests.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.Tests\\IngredientTests.cs*",
+              "RelativeToolTip": "RestFlow.Tests\\IngredientTests.cs*",
+              "ViewState": "AgIAALIAAAAAAAAAAAAqwG4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T21:53:38.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IngredientController.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\Controllers\\IngredientController.cs",
+              "RelativeDocumentMoniker": "RestFlow.API\\Controllers\\IngredientController.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\Controllers\\IngredientController.cs",
+              "RelativeToolTip": "RestFlow.API\\Controllers\\IngredientController.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAUwE0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T09:51:01.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IIngredientService.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\IIngredientService.cs",
+              "RelativeDocumentMoniker": "RestFlow.BL\\Services\\IIngredientService.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\IIngredientService.cs",
+              "RelativeToolTip": "RestFlow.BL\\Services\\IIngredientService.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA5wA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T09:42:16.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "WaiterService.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\WaiterService.cs",
+              "RelativeDocumentMoniker": "RestFlow.BL\\Services\\WaiterService.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\WaiterService.cs",
+              "RelativeToolTip": "RestFlow.BL\\Services\\WaiterService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAqwCoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T13:38:14.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WaiterController.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\Controllers\\WaiterController.cs",
+              "RelativeDocumentMoniker": "RestFlow.API\\Controllers\\WaiterController.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\Controllers\\WaiterController.cs",
+              "RelativeToolTip": "RestFlow.API\\Controllers\\WaiterController.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAiwD8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T13:56:51.847Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "RestFlow.API\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "RestFlow.API\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAACsAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T19:19:19.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TableController.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\Controllers\\TableController.cs",
+              "RelativeDocumentMoniker": "RestFlow.API\\Controllers\\TableController.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\Controllers\\TableController.cs",
+              "RelativeToolTip": "RestFlow.API\\Controllers\\TableController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAACkAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T16:35:50.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DishTests.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.Tests\\DishTests.cs",
+              "RelativeDocumentMoniker": "RestFlow.Tests\\DishTests.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.Tests\\DishTests.cs",
+              "RelativeToolTip": "RestFlow.Tests\\DishTests.cs",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAAAJIAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T14:32:01.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DishDto.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\DTO\\DishDto.cs",
+              "RelativeDocumentMoniker": "RestFlow.API\\DTO\\DishDto.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\DTO\\DishDto.cs",
+              "RelativeToolTip": "RestFlow.API\\DTO\\DishDto.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAkwA8AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T19:27:46.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "RestFlow.API\\Controllers\\CategoryController.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "RestFlow.API\\Controllers\\CategoryController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwDUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-16T14:05:35.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CategoryDto.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\DTO\\CategoryDto.cs",
+              "RelativeDocumentMoniker": "RestFlow.API\\DTO\\CategoryDto.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\DTO\\CategoryDto.cs",
+              "RelativeToolTip": "RestFlow.API\\DTO\\CategoryDto.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T09:16:45.526Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AuthTests.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.Tests\\AuthTests.cs",
+              "RelativeDocumentMoniker": "RestFlow.Tests\\AuthTests.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.Tests\\AuthTests.cs",
+              "RelativeToolTip": "RestFlow.Tests\\AuthTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T13:50:09.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TableDTO.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\DTO\\TableDTO.cs",
+              "RelativeDocumentMoniker": "RestFlow.API\\DTO\\TableDTO.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\DTO\\TableDTO.cs",
+              "RelativeToolTip": "RestFlow.API\\DTO\\TableDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T16:35:19.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "TableRepository.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\TableRepository.cs",
+              "RelativeDocumentMoniker": "RestFlow.DAL\\Repositories\\TableRepository.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\TableRepository.cs",
+              "RelativeToolTip": "RestFlow.DAL\\Repositories\\TableRepository.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAArwBYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T16:29:37.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "DishService.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\DishService.cs",
+              "RelativeDocumentMoniker": "RestFlow.BL\\Services\\DishService.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\DishService.cs",
+              "RelativeToolTip": "RestFlow.BL\\Services\\DishService.cs",
+              "ViewState": "AgIAALAAAAAAAAAAAAAqwMAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T18:09:58.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ModelFactory.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Factory\\ModelFactory.cs",
+              "RelativeDocumentMoniker": "RestFlow.BL\\Factory\\ModelFactory.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Factory\\ModelFactory.cs",
+              "RelativeToolTip": "RestFlow.BL\\Factory\\ModelFactory.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAADMAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T10:04:50.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\appsettings.json",
+              "RelativeDocumentMoniker": "RestFlow.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\appsettings.json",
+              "RelativeToolTip": "RestFlow.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-16T14:24:20.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "IOrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\IOrderRepository.cs",
+              "RelativeDocumentMoniker": "RestFlow.DAL\\Repositories\\IOrderRepository.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\IOrderRepository.cs",
+              "RelativeToolTip": "RestFlow.DAL\\Repositories\\IOrderRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T18:56:39.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "RestFlow.API\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "RestFlow.API\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAqwBUAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T11:23:08.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "IOrderService.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\IOrderService.cs",
+              "RelativeDocumentMoniker": "RestFlow.BL\\Services\\IOrderService.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\IOrderService.cs",
+              "RelativeToolTip": "RestFlow.BL\\Services\\IOrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T19:00:02.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\OrderService.cs",
+              "RelativeDocumentMoniker": "RestFlow.BL\\Services\\OrderService.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\OrderService.cs",
+              "RelativeToolTip": "RestFlow.BL\\Services\\OrderService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAiwBEAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T19:00:13.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Entities\\Order.cs",
+              "RelativeDocumentMoniker": "RestFlow.DAL\\Entities\\Order.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Entities\\Order.cs",
+              "RelativeToolTip": "RestFlow.DAL\\Entities\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T19:13:24.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\Program.cs",
+              "RelativeDocumentMoniker": "RestFlow.API\\Program.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\Program.cs",
+              "RelativeToolTip": "RestFlow.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-16T12:20:50.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Table.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Entities\\Table.cs",
+              "RelativeDocumentMoniker": "RestFlow.DAL\\Entities\\Table.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Entities\\Table.cs",
+              "RelativeToolTip": "RestFlow.DAL\\Entities\\Table.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T10:27:24.004Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "RestFlow.DAL\\Repositories\\OrderRepository.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\OrderRepository.cs",
+              "RelativeToolTip": "RestFlow.DAL\\Repositories\\OrderRepository.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAQwCsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T18:57:04.268Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "TableService.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\TableService.cs",
+              "RelativeDocumentMoniker": "RestFlow.BL\\Services\\TableService.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\TableService.cs",
+              "RelativeToolTip": "RestFlow.BL\\Services\\TableService.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAhwCoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T16:32:11.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "WaiterRepository.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\WaiterRepository.cs",
+              "RelativeDocumentMoniker": "RestFlow.DAL\\Repositories\\WaiterRepository.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\WaiterRepository.cs",
+              "RelativeToolTip": "RestFlow.DAL\\Repositories\\WaiterRepository.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAqwBsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T11:30:22.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\Dockerfile",
+              "RelativeDocumentMoniker": "RestFlow.API\\Dockerfile",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\Dockerfile",
+              "RelativeToolTip": "RestFlow.API\\Dockerfile",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-08-16T14:05:20.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "ITableRepository.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\ITableRepository.cs",
+              "RelativeDocumentMoniker": "RestFlow.DAL\\Repositories\\ITableRepository.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\ITableRepository.cs",
+              "RelativeToolTip": "RestFlow.DAL\\Repositories\\ITableRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T16:27:49.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "OrderDTO.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\DTO\\OrderDTO.cs",
+              "RelativeDocumentMoniker": "RestFlow.API\\DTO\\OrderDTO.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\DTO\\OrderDTO.cs",
+              "RelativeToolTip": "RestFlow.API\\DTO\\OrderDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T19:20:12.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "AddDishDTO.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\DTO\\AddDishDTO.cs",
+              "RelativeDocumentMoniker": "RestFlow.API\\DTO\\AddDishDTO.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\DTO\\AddDishDTO.cs",
+              "RelativeToolTip": "RestFlow.API\\DTO\\AddDishDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T19:20:32.831Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "IWaiterRepository.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\IWaiterRepository.cs",
+              "RelativeDocumentMoniker": "RestFlow.DAL\\Repositories\\IWaiterRepository.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\IWaiterRepository.cs",
+              "RelativeToolTip": "RestFlow.DAL\\Repositories\\IWaiterRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T11:29:52.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Waiter.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Entities\\Waiter.cs",
+              "RelativeDocumentMoniker": "RestFlow.DAL\\Entities\\Waiter.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Entities\\Waiter.cs",
+              "RelativeToolTip": "RestFlow.DAL\\Entities\\Waiter.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T11:28:20.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "IModelFactory.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Factory\\IModelFactory.cs",
+              "RelativeDocumentMoniker": "RestFlow.BL\\Factory\\IModelFactory.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Factory\\IModelFactory.cs",
+              "RelativeToolTip": "RestFlow.BL\\Factory\\IModelFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T20:09:53.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "ITableService.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\ITableService.cs",
+              "RelativeDocumentMoniker": "RestFlow.BL\\Services\\ITableService.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\ITableService.cs",
+              "RelativeToolTip": "RestFlow.BL\\Services\\ITableService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T16:31:24.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "IngredientDTO.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\DTO\\IngredientDTO.cs",
+              "RelativeDocumentMoniker": "RestFlow.API\\DTO\\IngredientDTO.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\DTO\\IngredientDTO.cs",
+              "RelativeToolTip": "RestFlow.API\\DTO\\IngredientDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T09:32:30.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "WaiterLoginDTO.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\DTO\\WaiterLoginDTO.cs",
+              "RelativeDocumentMoniker": "RestFlow.API\\DTO\\WaiterLoginDTO.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\DTO\\WaiterLoginDTO.cs",
+              "RelativeToolTip": "RestFlow.API\\DTO\\WaiterLoginDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T11:34:36.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "WaiterDTO.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\DTO\\WaiterDTO.cs",
+              "RelativeDocumentMoniker": "RestFlow.API\\DTO\\WaiterDTO.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\DTO\\WaiterDTO.cs",
+              "RelativeToolTip": "RestFlow.API\\DTO\\WaiterDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T11:34:51.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "IWaiterService.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\IWaiterService.cs",
+              "RelativeDocumentMoniker": "RestFlow.BL\\Services\\IWaiterService.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\IWaiterService.cs",
+              "RelativeToolTip": "RestFlow.BL\\Services\\IWaiterService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T11:43:11.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "IngredientRepository.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\IngredientRepository.cs",
+              "RelativeDocumentMoniker": "RestFlow.DAL\\Repositories\\IngredientRepository.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\IngredientRepository.cs",
+              "RelativeToolTip": "RestFlow.DAL\\Repositories\\IngredientRepository.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAAAEwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T21:32:31.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "IDishRepository.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\IDishRepository.cs",
+              "RelativeDocumentMoniker": "RestFlow.DAL\\Repositories\\IDishRepository.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\IDishRepository.cs",
+              "RelativeToolTip": "RestFlow.DAL\\Repositories\\IDishRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T18:06:55.218Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "IngredientService.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\IngredientService.cs",
+              "RelativeDocumentMoniker": "RestFlow.BL\\Services\\IngredientService.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\IngredientService.cs",
+              "RelativeToolTip": "RestFlow.BL\\Services\\IngredientService.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAAAD8AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T09:42:47.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "DishRepository.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\DishRepository.cs",
+              "RelativeDocumentMoniker": "RestFlow.DAL\\Repositories\\DishRepository.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\DishRepository.cs",
+              "RelativeToolTip": "RestFlow.DAL\\Repositories\\DishRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T18:07:08.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "IDishService.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\IDishService.cs",
+              "RelativeDocumentMoniker": "RestFlow.BL\\Services\\IDishService.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\IDishService.cs",
+              "RelativeToolTip": "RestFlow.BL\\Services\\IDishService.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAUwAsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T18:09:25.071Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\CategoryService.cs",
+              "RelativeDocumentMoniker": "RestFlow.BL\\Services\\CategoryService.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\CategoryService.cs",
+              "RelativeToolTip": "RestFlow.BL\\Services\\CategoryService.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAqwEEAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-16T14:03:12.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Entities\\Category.cs",
+              "RelativeDocumentMoniker": "RestFlow.DAL\\Entities\\Category.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Entities\\Category.cs",
+              "RelativeToolTip": "RestFlow.DAL\\Entities\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T18:47:35.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "ICategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\ICategoryService.cs",
+              "RelativeDocumentMoniker": "RestFlow.BL\\Services\\ICategoryService.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\ICategoryService.cs",
+              "RelativeToolTip": "RestFlow.BL\\Services\\ICategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-16T14:02:49.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "IIngredientRepository.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\IIngredientRepository.cs",
+              "RelativeDocumentMoniker": "RestFlow.DAL\\Repositories\\IIngredientRepository.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\IIngredientRepository.cs",
+              "RelativeToolTip": "RestFlow.DAL\\Repositories\\IIngredientRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T21:32:05.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\IAuthService.cs",
+              "RelativeDocumentMoniker": "RestFlow.BL\\Services\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\IAuthService.cs",
+              "RelativeToolTip": "RestFlow.BL\\Services\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T11:22:00.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "RestFlow.DAL\\Repositories\\CategoryRepository.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\CategoryRepository.cs",
+              "RelativeToolTip": "RestFlow.DAL\\Repositories\\CategoryRepository.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAUwBEAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T14:40:27.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "ICategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\ICategoryRepository.cs",
+              "RelativeDocumentMoniker": "RestFlow.DAL\\Repositories\\ICategoryRepository.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\ICategoryRepository.cs",
+              "RelativeToolTip": "RestFlow.DAL\\Repositories\\ICategoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T19:46:51.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "AuthRepository.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\AuthRepository.cs",
+              "RelativeDocumentMoniker": "RestFlow.DAL\\Repositories\\AuthRepository.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\AuthRepository.cs",
+              "RelativeToolTip": "RestFlow.DAL\\Repositories\\AuthRepository.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAiwBIAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T10:50:17.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "RestFlow.BL\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.BL\\Services\\AuthService.cs",
+              "RelativeToolTip": "RestFlow.BL\\Services\\AuthService.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAQwBAAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T11:22:19.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "RestFlow.DAL\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Entities\\User.cs",
+              "RelativeToolTip": "RestFlow.DAL\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T10:46:14.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "IAuthRepository.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\IAuthRepository.cs",
+              "RelativeDocumentMoniker": "RestFlow.DAL\\Repositories\\IAuthRepository.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Repositories\\IAuthRepository.cs",
+              "RelativeToolTip": "RestFlow.DAL\\Repositories\\IAuthRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T10:49:47.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "AuthDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Data\\AuthDbContext.cs",
+              "RelativeDocumentMoniker": "RestFlow.DAL\\Data\\AuthDbContext.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Data\\AuthDbContext.cs",
+              "RelativeToolTip": "RestFlow.DAL\\Data\\AuthDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T10:44:52.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "DataDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Data\\DataDbContext.cs",
+              "RelativeDocumentMoniker": "RestFlow.DAL\\Data\\DataDbContext.cs",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\Data\\DataDbContext.cs",
+              "RelativeToolTip": "RestFlow.DAL\\Data\\DataDbContext.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA5wAwAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-16T12:08:23.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "RestFlow.API.csproj",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\RestFlow.API.csproj",
+              "RelativeDocumentMoniker": "RestFlow.API\\RestFlow.API.csproj",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\RestFlow.API.csproj",
+              "RelativeToolTip": "RestFlow.API\\RestFlow.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-08-16T12:20:46.223Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "RestFlow.API.http",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\RestFlow.API.http",
+              "RelativeDocumentMoniker": "RestFlow.API\\RestFlow.API.http",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.API\\RestFlow.API.http",
+              "RelativeToolTip": "RestFlow.API\\RestFlow.API.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-08-16T14:05:02.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "RestFlow.DAL.csproj",
+              "DocumentMoniker": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\RestFlow.DAL.csproj",
+              "RelativeDocumentMoniker": "RestFlow.DAL\\RestFlow.DAL.csproj",
+              "ToolTip": "C:\\Users\\almog\\source\\repos\\RestFlow\\RestFlow.DAL\\RestFlow.DAL.csproj",
+              "RelativeToolTip": "RestFlow.DAL\\RestFlow.DAL.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-08-16T11:44:15.549Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
