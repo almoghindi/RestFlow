@@ -9,18 +9,21 @@ import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Pandem - Information you need during on-call emergencies",
+  title: "RestFlow",
   description:
-    "Quickly link new on-call tickets to similar past incidents and their solutions. All directly in Slack the moment an incident happens.",
+    "Instantly connect new orders and customer requests to previous orders and solutions. All seamlessly integrated into your restaurant management system the moment an order is placed.",
   openGraph: {
-    images: "/opengraph-image.png",
+    images: "/hero.png",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pandem - Information you need during on-call emergencies",
+    title: "RestFlow - Your All-in-One Platform for Restaurant Efficiency",
     description:
-      "Quickly link new on-call tickets to similar past incidents and their solutions. All directly in Slack the moment an incident happens.",
-    images: ["https://i.imgur.com/MPMcyPP.png"],
+      "Instantly connect new orders and customer requests to previous orders and solutions. All seamlessly integrated into your restaurant management system the moment an order is placed.",
+    images: ["./icon.png"],
+  },
+  icons: {
+    icon: "/favicon.ico",
   },
 };
 
@@ -31,6 +34,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className="antialiased">
+      <head>
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+      </head>
       <Analytics />
       <body className={inter.className}>
         <ThemeProvider
