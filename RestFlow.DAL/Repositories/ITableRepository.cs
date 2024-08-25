@@ -10,7 +10,7 @@ namespace RestFlow.DAL.Repositories
     public interface ITableRepository
     {
         Task<Table> GetById(int id);
-        Task<IEnumerable<Table>> GetAll();
+        Task<IEnumerable<Table>> GetAllByRestaurantId(int restaurantId);
         Task Add(Table table);
         Task Delete(int id);
     }

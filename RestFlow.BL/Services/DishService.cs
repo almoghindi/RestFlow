@@ -14,6 +14,7 @@ namespace RestFlow.BL.Services
         private readonly ICategoryService _categoryService;
 
         private readonly Dictionary<int, List<Dish>> _categoryDishIndex = new Dictionary<int, List<Dish>>();
+        private bool _isIndexInitialized = false;
 
         public DishService(IDishRepository dishRepository, ILogger<DishService> logger, IModelFactory modelFactory, ICategoryService categoryService)
         {
@@ -21,16 +22,18 @@ namespace RestFlow.BL.Services
             _logger = logger;
             _modelFactory = modelFactory;
             _categoryService = categoryService;
-            InitializeIndex().Wait();
         }
 
-        private async Task InitializeIndex()
+        public async Task InitializeIndex(int restaurantId)
         {
+            if (_isIndexInitialized) return;
+
             try
             {
                 _logger.LogInformation("Initializing category-dish index.");
-                var dishes = await _dishRepository.GetAll();
+                var dishes = await _dishRepository.GetAllByRestaurantId(restaurantId);
                 UpdateIndex(dishes);
+                _isIndexInitialized = true;
                 _logger.LogInformation("Category-dish index initialized.");
             }
             catch (Exception ex)
@@ -53,12 +56,16 @@ namespace RestFlow.BL.Services
             }
         }
 
-        public async Task<IEnumerable<Dish>> GetAll()
+        public async Task<IEnumerable<Dish>> GetAllByRestaurantId(int restaurantId)
         {
+            if (!_isIndexInitialized)
+            {
+                await InitializeIndex(restaurantId);
+            }
             try
             {
                 _logger.LogInformation("Fetching all dishes from BL.");
-                var dishes = await _dishRepository.GetAll();
+                var dishes = await _dishRepository.GetAllByRestaurantId(restaurantId);
                 _logger.LogInformation("Successfully fetched all dishes.");
                 return dishes;
             }
@@ -89,7 +96,7 @@ namespace RestFlow.BL.Services
             }
         }
 
-        public async Task Add(string name, decimal price,int categoryId, bool isAvailable, List<int> ingredients, string description)
+        public async Task Add(string name, decimal price,int categoryId, bool isAvailable, List<int> ingredients, string description, int restaurantId)
         {
             try
             {
@@ -101,7 +108,7 @@ namespace RestFlow.BL.Services
                     throw new Exception();
                 }
 
-                Dish dish = _modelFactory.CreateDish(name, price, categoryId, new List<Ingredient> (), description);
+                Dish dish = _modelFactory.CreateDish(name, price, categoryId, description, restaurantId);
                 dish.Category = category;
                 if (dish == null)
                 {

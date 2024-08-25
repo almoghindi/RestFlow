@@ -1,17 +1,9 @@
 "use client";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/class-names";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 import Typography from "@/components/ui/typography";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerHeader,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
-import { MenuIcon, X } from "lucide-react";
 
 interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -19,9 +11,9 @@ export function Header({ className }: SidebarProps) {
   const pathname = usePathname();
   const items = [
     {
-      href: "https://map.sistilli.dev/public/coding/SaaS+Boilerplate",
+      href: "/",
       title: "Book a demo",
-      openInNewTab: true,
+      openInNewTab: false,
     },
     // { href: '#pricing', title: 'Features' },
     // {
@@ -32,22 +24,16 @@ export function Header({ className }: SidebarProps) {
 
   const getLogo = () => (
     <Link href="/" className="pointer flex items-center">
-      <img src="/logo.png" className="mr-3 h-10" />
+      <img src="/logo.png" className="mr-3 h-8" />
     </Link>
   );
 
   const getAuthButtons = () => (
     <div className="flex gap-3 items-center">
-      <Link
-        href="https://map.sistilli.dev/public/coding/SaaS+Boilerplate"
-        target="_blank"
-      >
+      <Link href="/login">
         <Typography variant="p">Login</Typography>
       </Link>
-      <Link
-        href="https://map.sistilli.dev/public/coding/SaaS+Boilerplate"
-        target="_blank"
-      >
+      <Link href="/login">
         <Button size="tiny" color="ghost">
           <Typography variant="p" className="text-black">
             Sign Up
@@ -104,23 +90,6 @@ export function Header({ className }: SidebarProps) {
           {/* Mobile */}
           <div className="md:hidden flex gap-x-4 items-center">
             {getAuthButtons()}
-            <Drawer direction="right">
-              <DrawerTrigger asChild>
-                <MenuIcon />
-              </DrawerTrigger>
-              <DrawerContent className="h-screen top-0 right-0 left-auto mt-0 w-64 rounded-none">
-                <div className="mx-auto w-full p-5">
-                  <DrawerHeader>
-                    <DrawerClose asChild>
-                      <div className="w-full flex items-end justify-end">
-                        <X />
-                      </div>
-                    </DrawerClose>
-                  </DrawerHeader>
-                  <div className="p-4 pb-0 space-y-4">{getHeaderItems()}</div>
-                </div>
-              </DrawerContent>
-            </Drawer>
           </div>
         </div>
       </div>

@@ -42,12 +42,12 @@ namespace RestFlow.BL.Services
             }
         }
 
-        public async Task<IEnumerable<Table>> GetAll()
+        public async Task<IEnumerable<Table>> GetAllByRestaurantId(int restaurantId)
         {
             try
             {
                 _logger.LogInformation("Fetching all Tables");
-                var tables = await _tableRepository.GetAll();
+                var tables = await _tableRepository.GetAllByRestaurantId(restaurantId);
                 return tables;
             }
             catch (Exception ex)
@@ -57,12 +57,12 @@ namespace RestFlow.BL.Services
             }
         }
 
-        public async Task Add(string tableNumber, int capacity)
+        public async Task Add(string tableNumber, int capacity, int restaurantId)
         {
             try
             {
                 _logger.LogInformation($"Adding Table : {tableNumber}");
-                var table = _modelFactory.CreateTable(tableNumber, capacity);
+                var table = _modelFactory.CreateTable(tableNumber, capacity, restaurantId);
                 await _tableRepository.Add(table);
                 _logger.LogInformation($"Successfully added Table with ID: {table.TableId}");
             }

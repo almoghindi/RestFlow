@@ -27,10 +27,10 @@ namespace RestFlow.DAL.Repositories
             return waiter;
         }
 
-        public async Task<IEnumerable<Waiter>> GetAll()
+        public async Task<IEnumerable<Waiter>> GetAllByRestaurantId(int restaurantId)
         {
             _logger.LogInformation("Fetching all Waiters");
-            var waiters = await _context.Waiters.ToListAsync();
+            var waiters = await _context.Waiters.Where(w => w.RestaurantId == restaurantId).ToListAsync();
             return waiters;
         }
 
@@ -57,6 +57,15 @@ namespace RestFlow.DAL.Repositories
                 _logger.LogWarning($"Waiter with ID: {id} not found for deletion");
             }
         }
+
+        public async Task<Waiter> Login(string fullName, string password, int restaurantId)
+        {
+            _logger.LogInformation($"Logging Waiter with name: {fullName}");
+            var waiter = _context.Waiters.FirstOrDefault(w => w.FullName == fullName && w.Password == password && w.RestaurantId == restaurantId);
+            _logger.LogInformation($"Waiter with ID: {waiter.WaiterId} logged in succesfully");
+            return waiter;
+        }
+
     }
 
 }

@@ -51,13 +51,24 @@ namespace RestFlow.DAL.Repositories
             }
         }
 
-        public async Task<IEnumerable<Order>> GetIncompleteOrders()
+        public async Task<IEnumerable<Order>> GetIncompleteOrdersByRestaurantId(int restaurantId)
         {
             return await _context.Orders
                            .Include(o => o.Dishes)
                            .Include(o => o.Table)
                            .Include(o => o.Waiter)
                            .Where(o => !o.IsCompleted)
+                           .Where(o => o.RestaurantId == restaurantId)
+                           .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Order>> GetCompletedOrdersByRestaurantId(int restaurantId)
+        {
+            return await _context.Orders
+                           .Include(o => o.Dishes)
+                           .Include(o => o.Table)
+                           .Include(o => o.Waiter)
+                           .Where(o => o.RestaurantId == restaurantId)
                            .ToListAsync();
         }
 

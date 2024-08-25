@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Moq;
 using RestFlow.API.Controllers;
+using RestFlow.API.DTO;
 using RestFlow.BL.Services;
 using System;
 using System.Collections.Generic;
@@ -24,12 +25,11 @@ namespace RestFlow.Tests
         [Fact]
         public async Task Signup_ShouldReturnOk_WhenSignupSucceeds()
         {
-            var userName = "testuser";
-            var password = "testpassword";
-            _mockAuthService.Setup(service => service.Signup(userName, password))
+            UserDTO userDTO = new UserDTO { Name="testuser", Password="testpassword", RestaurantId = 1 };
+            _mockAuthService.Setup(service => service.Signup(userDTO.Name, userDTO.Password, userDTO.RestaurantId))
                 .ReturnsAsync(true);
 
-            var result = await _controller.Signup(userName, password);
+            var result = await _controller.Signup(userDTO);
 
             var okResult = Assert.IsType<OkObjectResult>(result);
             Assert.Equal("User signed up successfully.", okResult.Value);
@@ -38,12 +38,11 @@ namespace RestFlow.Tests
         [Fact]
         public async Task Signup_ShouldReturnBadRequest_WhenSignupFails()
         {
-            var userName = "testuser";
-            var password = "testpassword";
-            _mockAuthService.Setup(service => service.Signup(userName, password))
+            UserDTO userDTO = new UserDTO { Name = "testuser", Password = "testpassword", RestaurantId = 1 };
+            _mockAuthService.Setup(service => service.Signup(userDTO.Name, userDTO.Password, userDTO.RestaurantId))
                 .ReturnsAsync(false);
 
-            var result = await _controller.Signup(userName, password);
+            var result = await _controller.Signup(userDTO);
 
             var badRequestResult = Assert.IsType<BadRequestObjectResult>(result);
             Assert.Equal("Signup failed.", badRequestResult.Value);
@@ -52,12 +51,12 @@ namespace RestFlow.Tests
         [Fact]
         public async Task Login_ShouldReturnOk_WhenLoginSucceeds()
         {
-            var userName = "testuser";
-            var password = "testpassword";
-            _mockAuthService.Setup(service => service.Login(userName, password))
+            UserDTO userDTO = new UserDTO { Name = "testuser", Password = "testpassword", RestaurantId = 1 };
+
+            _mockAuthService.Setup(service => service.Login(userDTO.Name, userDTO.Password, userDTO.RestaurantId))
                 .ReturnsAsync(true);
 
-            var result = await _controller.Login(userName, password);
+            var result = await _controller.Login(userDTO);
 
             var okResult = Assert.IsType<OkObjectResult>(result);
             Assert.Equal("User logged in successfully.", okResult.Value);
@@ -66,12 +65,12 @@ namespace RestFlow.Tests
         [Fact]
         public async Task Login_ShouldReturnUnauthorized_WhenLoginFails()
         {
-            var userName = "testuser";
-            var password = "testpassword";
-            _mockAuthService.Setup(service => service.Login(userName, password))
+            UserDTO userDTO = new UserDTO { Name = "testuser", Password = "testpassword", RestaurantId = 1 };
+
+            _mockAuthService.Setup(service => service.Login(userDTO.Name, userDTO.Password, userDTO.RestaurantId))
                 .ReturnsAsync(false);
 
-            var result = await _controller.Login(userName, password);
+            var result = await _controller.Login(userDTO);
 
             var unauthorizedResult = Assert.IsType<UnauthorizedObjectResult>(result);
             Assert.Equal("Login failed.", unauthorizedResult.Value);

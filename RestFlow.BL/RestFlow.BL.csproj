@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RestFlow.Common\RestFlow.Common.csproj" />
     <ProjectReference Include="..\RestFlow.DAL\RestFlow.DAL.csproj" />
   </ItemGroup>
 

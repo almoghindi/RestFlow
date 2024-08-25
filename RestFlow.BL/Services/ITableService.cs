@@ -10,8 +10,8 @@ namespace RestFlow.BL.Services
     public interface ITableService
     {
         Task<Table> GetById(int id);
-        Task<IEnumerable<Table>> GetAll();
-        Task Add(string tableNumber, int capacity);
+        Task<IEnumerable<Table>> GetAllByRestaurantId(int restaurantId);
+        Task Add(string tableNumber, int capacity, int restaurantId);
         Task Delete(int id);
     }
 }

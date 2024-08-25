@@ -20,19 +20,19 @@ namespace RestFlow.DAL.Repositories
         public async Task<Ingredient> GetById(int id)
         {
             _logger.LogInformation($"Getting ingredient with ID {id}");
-            return await _context.Set<Ingredient>().FindAsync(id);
+            return await _context.Ingredients.FindAsync(id);
         }
 
-        public async Task<IEnumerable<Ingredient>> GetAll()
+        public async Task<IEnumerable<Ingredient>> GetAllByRestaurantId(int restaurantId)
         {
             _logger.LogInformation("Getting all ingredients");
-            return await _context.Set<Ingredient>().ToListAsync();
+            return await _context.Ingredients.Where(i => i.RestaurantId == restaurantId).ToListAsync();
         }
 
         public async Task Add(Ingredient ingredient)
         {
             _logger.LogInformation($"Adding a new ingredient: {ingredient.Name}");
-            await _context.Set<Ingredient>().AddAsync(ingredient);
+            await _context.Ingredients.AddAsync(ingredient);
             await _context.SaveChangesAsync();
         }
 
@@ -49,7 +49,7 @@ namespace RestFlow.DAL.Repositories
             var ingredient = await GetById(id);
             if (ingredient != null)
             {
-                _context.Set<Ingredient>().Remove(ingredient);
+                _context.Ingredients.Remove(ingredient);
                 await _context.SaveChangesAsync();
             }
         }

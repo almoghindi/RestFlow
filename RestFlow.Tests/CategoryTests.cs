@@ -5,6 +5,7 @@ using RestFlow.API.Controllers;
 using RestFlow.API.DTO;
 using RestFlow.BL.Services;
 using RestFlow.DAL.Entities;
+using StackExchange.Redis;
 
 namespace RestFlow.Tests
 {
@@ -24,18 +25,18 @@ namespace RestFlow.Tests
         {
             var categories = new List<CategoryDto>
             {
-                new CategoryDto { CategoryId = 1, Name = "Category1", Description = "Description1" },
-                new CategoryDto { CategoryId = 2, Name = "Category2", Description = "Description2" }
+                new CategoryDto { CategoryId = 1, Name = "Category1", Description = "Description1", RestaurantId = 1 },
+                new CategoryDto { CategoryId = 2, Name = "Category2", Description = "Description2", RestaurantId = 1 }
             };
 
-            _mockCategoryService.Setup(service => service.GetAll())
+            _mockCategoryService.Setup(service => service.GetAllByRestaurantId(1))
     .ReturnsAsync(new List<Category>
     {
-        new Category { CategoryId = 1, Name = "Category1", Description = "Description1" },
-        new Category { CategoryId = 2, Name = "Category2", Description = "Description2" }
+        new Category { CategoryId = 1, Name = "Category1", Description = "Description1", RestaurantId = 1 },
+        new Category { CategoryId = 2, Name = "Category2", Description = "Description2", RestaurantId = 1 }
     }.AsEnumerable());
 
-            var result = await _controller.GetCategories() as OkObjectResult;
+            var result = await _controller.GetCategories(1) as OkObjectResult;
 
             result.Should().NotBeNull();
             result.StatusCode.Should().Be(200);
@@ -45,7 +46,7 @@ namespace RestFlow.Tests
         [Fact]
         public async Task AddCategory_ShouldReturnCreatedAtActionResult()
         {
-            var categoryDto = new CategoryDto { CategoryId = 1, Name = "New Category", Description = "New Description" };
+            var categoryDto = new CategoryDto { CategoryId = 1, Name = "New Category", Description = "New Description", RestaurantId = 1 };
 
             var result = await _controller.AddCategory(categoryDto) as CreatedAtActionResult;
 
@@ -57,30 +58,27 @@ namespace RestFlow.Tests
         }
 
         [Fact]
-        public async Task DeleteCategory_ShouldReturnNotFound_WhenCategoryDoesNotExist()
+        public async Task DeleteCategory_ShouldReturnBadRequest_WhenCategoryDoesNotExist()
         {
-            int categoryId = 3; 
+            int categoryId = 0;
 
-            _mockCategoryService.Setup(service => service.GetAll())
-                .ReturnsAsync(new List<Category>
-                {
-            new Category { CategoryId = 1, Name = "Category1", Description = "Description1" },
-            new Category { CategoryId = 2, Name = "Category2", Description = "Description2" }
-                }.AsEnumerable());
+            _mockCategoryService.Setup(service => service.Delete(categoryId))
+                 .ThrowsAsync(new InvalidOperationException("Sequence contains no elements"));
 
-            var result = await _controller.DeleteCategory(categoryId) as NotFoundObjectResult;
+            var result = await _controller.DeleteCategory(categoryId);
 
-            result.Should().NotBeNull();
-            result.StatusCode.Should().Be(404);
-            result.Value.Should().Be("Category not found.");
+           
+            result.Should().BeOfType<BadRequestObjectResult>();
+            var objectResult = result as BadRequestObjectResult;
+            objectResult.StatusCode.Should().Be(400);         
         }
 
         [Fact]
         public async Task UpdateCategory_ShouldReturnNoContent_WhenCategoryUpdatedSuccessfully()
         {
-            var category = new Category { CategoryId = 1, Name = "Updated Category", Description = "Updated Description" };
+            var category = new Category { CategoryId = 1, Name = "Updated Category", Description = "Updated Description", RestaurantId = 1 };
 
-            _mockCategoryService.Setup(service => service.GetAll())
+            _mockCategoryService.Setup(service => service.GetAllByRestaurantId(1))
     .ReturnsAsync(new List<Category>
     {
         new Category { CategoryId = 1, Name = "Category1", Description = "Description1" },
@@ -96,7 +94,7 @@ namespace RestFlow.Tests
         [Fact]
         public async Task UpdateCategory_ShouldReturnBadRequest_WhenIdMismatch()
         {
-            var category = new Category { CategoryId = 2, Name = "Updated Category", Description = "Updated Description" };
+            var category = new Category { CategoryId = 2, Name = "Updated Category", Description = "Updated Description", RestaurantId = 1 };
 
             var result = await _controller.UpdateCategory(1, category) as BadRequestObjectResult;
 

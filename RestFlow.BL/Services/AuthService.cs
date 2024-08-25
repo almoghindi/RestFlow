@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using RestFlow.Common.Validations;
 using RestFlow.DAL.Repositories;
 using System;
 using System.Text.RegularExpressions;
@@ -17,25 +18,25 @@ namespace RestFlow.BL.Services
             _logger = logger;
         }
 
-        public async Task<bool> Signup(string userName, string password)
+        public async Task<bool> Signup(string userName, string password, int restaurantId)
         {
             try
             {
                 _logger.LogInformation("Attempting to sign up user: {UserName}", userName);
 
-                if (!IsValidUserName(userName))
+                if (!UserValidations.IsValidUserName(userName))
                 {
                     _logger.LogWarning("Invalid username format: {UserName}", userName);
                     return false;
                 }
 
-                if (!IsValidPassword(password))
+                if (!UserValidations.IsValidPassword(password))
                 {
                     _logger.LogWarning("Invalid password format for user: {UserName}", userName);
                     return false;
                 }
 
-                var result = await _authRepository.Signup(userName, password);
+                var result = await _authRepository.Signup(userName, password, restaurantId);
 
                 if (result)
                 {
@@ -55,13 +56,13 @@ namespace RestFlow.BL.Services
             }
         }
 
-        public async Task<bool> Login(string userName, string password)
+        public async Task<bool> Login(string userName, string password, int restaurantId)
         {
             try
             {
                 _logger.LogInformation("Attempting to log in user: {UserName}", userName);
 
-                var result = await _authRepository.Login(userName, password);
+                var result = await _authRepository.Login(userName, password, restaurantId);
 
                 if (result)
                 {
@@ -98,14 +99,6 @@ namespace RestFlow.BL.Services
             }
         }
 
-        private bool IsValidUserName(string userName)
-        {
-            return Regex.IsMatch(userName, @"^[a-zA-Z0-9]{3,20}$");
-        }
-
-        private bool IsValidPassword(string password)
-        {
-            return password.Length >= 8 && Regex.IsMatch(password, @"\d");
-        }
+        
     }
 }

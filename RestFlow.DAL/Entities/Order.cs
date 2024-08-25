@@ -13,6 +13,11 @@ namespace RestFlow.DAL.Entities
         public int OrderId { get; set; }
 
         [Required]
+        [ForeignKey("Restaurant")]
+        public int RestaurantId { get; set; }
+        public Restaurant Restaurant { get; set; }
+
+        [Required]
         [ForeignKey("Table")]
         public int TableId { get; set; }
 
@@ -25,7 +30,7 @@ namespace RestFlow.DAL.Entities
         public Waiter Waiter { get; set; }
 
         [Required]
-        public ICollection<Dish> Dishes { get; set; } = new HashSet<Dish>();
+        public ICollection<Dish> Dishes { get; set; } = new List<Dish>();
 
         [Required]
         public DateTime OrderDate { get; set; }

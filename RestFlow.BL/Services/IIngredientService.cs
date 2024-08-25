@@ -10,8 +10,8 @@ namespace RestFlow.BL.Services
     public interface IIngredientService
     {
         Task<Ingredient> GetById(int id);
-        Task<IEnumerable<Ingredient>> GetAll();
-        Task Add(string name, decimal quantity, decimal pricePerUnit, string description);
+        Task<IEnumerable<Ingredient>> GetAllByRestaurantId(int restaurantId);
+        Task Add(string name, decimal quantity, decimal pricePerUnit, string description, int restaurantId);
         Task Update(Ingredient ingredient);
         Task Delete(int id);
         Task AddQuantity(int id, decimal quantityToAdd);

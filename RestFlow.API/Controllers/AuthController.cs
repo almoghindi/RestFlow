@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RestFlow.API.DTO;
 using RestFlow.BL.Services;
 
 namespace RestFlow.API.Controllers
@@ -14,25 +15,41 @@ namespace RestFlow.API.Controllers
         }
 
         [HttpPost("signup")]
-        public async Task<IActionResult> Signup(string userName, string password)
+        public async Task<IActionResult> Signup(UserDTO userDTO)
         {
-            var result = await _authService.Signup(userName, password);
-            if (result)
+            if (userDTO == null)
             {
-                return Ok("User signed up successfully.");
+                return BadRequest("User is null");
             }
-            return BadRequest("Signup failed.");
+            if (string.IsNullOrEmpty(userDTO.Name) || string.IsNullOrEmpty(userDTO.Password) || userDTO.RestaurantId == 0)
+            {
+                return BadRequest("Invalid credentials");
+            }
+            var result = await _authService.Signup(userDTO.Name, userDTO.Password, userDTO.RestaurantId);
+            if (!result)
+            {
+                return BadRequest("Signup failed.");
+            }
+            return Ok("User signed up successfully.");
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login(string userName, string password)
+        public async Task<IActionResult> Login(UserDTO userDTO)
         {
-            var result = await _authService.Login(userName, password);
-            if (result)
+            if (userDTO == null)
             {
-                return Ok("User logged in successfully.");
+                return BadRequest("User is null");
             }
-            return Unauthorized("Login failed.");
+            if (string.IsNullOrEmpty(userDTO.Name) || string.IsNullOrEmpty(userDTO.Password) || userDTO.RestaurantId == 0)
+            {
+                return BadRequest("Invalid credentials");
+            }
+            var result = await _authService.Login(userDTO.Name, userDTO.Password, userDTO.RestaurantId);
+            if (!result)
+            {
+                return Unauthorized("Login failed.");
+            }
+            return Ok("User logged in successfully.");
         }
 
         [HttpPost("logout")]

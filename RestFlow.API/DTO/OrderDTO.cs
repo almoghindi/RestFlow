@@ -4,5 +4,6 @@
     {
         public int WaiterId { get; set; }
         public int TableId { get; set; }
+        public int RestaurantId { get; set; }
     }
 }

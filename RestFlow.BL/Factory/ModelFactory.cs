@@ -1,9 +1,4 @@
 ﻿using RestFlow.DAL.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RestFlow.BL.Factory
 {
@@ -11,16 +6,17 @@ namespace RestFlow.BL.Factory
     {
         public ModelFactory() { }
 
-        public Category CreateCategory(string name, string description)
+        public Category CreateCategory(string name, string description, int restaurantId)
         {
             return new Category
             {
                 Name = name,
                 Description = description,
+                RestaurantId = restaurantId
             };
         }
 
-        public Dish CreateDish(string name, decimal price, int categoryId, List<Ingredient> ingredients, string description)
+        public Dish CreateDish(string name, decimal price, int categoryId, string description, int restaurantId)
         {
             return new Dish
             {
@@ -29,11 +25,12 @@ namespace RestFlow.BL.Factory
                 CategoryId = categoryId,
                 Description = description,
                 IsAvailable = true,
-                Ingredients = ingredients
+                Ingredients = new List<Ingredient>(),
+                RestaurantId = restaurantId
             };
         }
 
-        public Ingredient CreateIngredient(string name, decimal quantity, decimal pricePerUnit, string description)
+        public Ingredient CreateIngredient(string name, decimal quantity, decimal pricePerUnit, string description, int restaurantId)
         {
             return new Ingredient
             {
@@ -41,16 +38,18 @@ namespace RestFlow.BL.Factory
                 Quantity = quantity,
                 PricePerUnit = pricePerUnit,
                 Description = description,
+                RestaurantId = restaurantId,
                 IsAvailable = quantity > 0,
             };
         }
 
-        public Order CreateOrder(int tableId, int waiterId)
+        public Order CreateOrder(int tableId, int waiterId, int restaurantId)
         {
             return new Order
             {
                 TableId = tableId,
                 WaiterId = waiterId,
+                RestaurantId = restaurantId,
                 Dishes = new List<Dish>(),
                 OrderDate = DateTime.UtcNow,
                 IsCompleted = false,
@@ -58,22 +57,33 @@ namespace RestFlow.BL.Factory
             };
         }
 
-        public Table CreateTable(string tableNumber, int capacity, bool isAvailable = true)
+        public Restaurant CreateRestaurant(string name, string password)
+        {
+            return new Restaurant
+            {
+                Name = name,
+                Password = password,
+            };
+        }
+
+        public Table CreateTable(string tableNumber, int capacity, int restaurantId, bool isAvailable = true)
         {
             return new Table
             {
                 TableNumber = tableNumber,
                 Capacity = capacity,
+                RestaurantId = restaurantId,
                 IsAvailable = isAvailable,
             };
         }
 
-        public Waiter CreateWaiter(string fullName, string password, string contactInformation)
+        public Waiter CreateWaiter(string fullName, string password, string contactInformation, int restaurantId)
         {
             return new Waiter
             {
                 FullName = fullName,
                 Password = password,
+                RestaurantId = restaurantId,
                 ContactInformation = contactInformation
             };
         }

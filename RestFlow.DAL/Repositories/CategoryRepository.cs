@@ -15,14 +15,15 @@ namespace RestFlow.DAL.Repositories
             _context = context;
             _logger = logger;
         }
-        public async Task<IEnumerable<Category>> GetAll()
+        public async Task<IEnumerable<Category>> GetAllByRestaurantId(int restaurantId)
         {
-            _logger.LogInformation($"{nameof(GetAll)}");
-            return await _context.Categories.ToListAsync();
+            _logger.LogInformation($"{nameof(GetAllByRestaurantId)}");
+            return await _context.Categories.Where(c => c.RestaurantId == restaurantId).ToListAsync();
         }
 
         public async Task<Category> GetById(int id)
         {
+            _logger.LogInformation($"{nameof(GetById)}");
             return await _context.Categories.SingleOrDefaultAsync(c => c.CategoryId == id);
         }
 

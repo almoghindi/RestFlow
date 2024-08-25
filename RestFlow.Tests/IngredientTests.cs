@@ -29,7 +29,8 @@ namespace RestFlow.Tests
                 Name = "Sugar",
                 Quantity = 10,
                 PricePerUnit = 2.0m,
-                Description = "White sugar"
+                Description = "White sugar",
+                RestaurantId = 1
             };
 
             _mockIngredientService
@@ -65,15 +66,15 @@ namespace RestFlow.Tests
         {
             var ingredients = new List<Ingredient>
             {
-                new Ingredient { IngredientId = 1, Name = "Sugar", Quantity = 10, PricePerUnit = 2.0m, Description = "White sugar" },
-                new Ingredient { IngredientId = 2, Name = "Salt", Quantity = 5, PricePerUnit = 1.0m, Description = "Sea salt" }
+                new Ingredient { IngredientId = 1, Name = "Sugar", Quantity = 10, PricePerUnit = 2.0m, Description = "White sugar" , RestaurantId = 1},
+                new Ingredient { IngredientId = 2, Name = "Salt", Quantity = 5, PricePerUnit = 1.0m, Description = "Sea salt" , RestaurantId = 1 }
             };
 
             _mockIngredientService
-                .Setup(service => service.GetAll())
+                .Setup(service => service.GetAllByRestaurantId(1))
                 .ReturnsAsync(ingredients);
 
-            var result = await _controller.GetAll() as ActionResult<IEnumerable<Ingredient>>;
+            var result = await _controller.GetAll(1) as ActionResult<IEnumerable<Ingredient>>;
 
             result.Result.Should().BeOfType<OkObjectResult>();
             var okResult = result.Result as OkObjectResult;
@@ -89,7 +90,8 @@ namespace RestFlow.Tests
                 Name = "Flour",
                 Quantity = 20,
                 PricePerUnit = 1.5m,
-                Description = "All-purpose flour"
+                Description = "All-purpose flour",
+                RestaurantId = 1
             };
 
             var ingredient = new Ingredient
@@ -98,7 +100,8 @@ namespace RestFlow.Tests
                 Name = ingredientDto.Name,
                 Quantity = ingredientDto.Quantity,
                 PricePerUnit = ingredientDto.PricePerUnit,
-                Description = ingredientDto.Description
+                Description = ingredientDto.Description,
+                RestaurantId = 1
             };
 
             _mockIngredientService
@@ -106,7 +109,8 @@ namespace RestFlow.Tests
         ingredientDto.Name,
         ingredientDto.Quantity,
         ingredientDto.PricePerUnit,
-        ingredientDto.Description))
+        ingredientDto.Description,
+        ingredientDto.RestaurantId))
     .Returns(Task.CompletedTask);
 
             var result = await _controller.Create(ingredientDto) as OkObjectResult;
@@ -126,7 +130,8 @@ namespace RestFlow.Tests
                 Name = "Updated Flour",
                 Quantity = 30,
                 PricePerUnit = 1.8m,
-                Description = "Updated description"
+                Description = "Updated description",
+                RestaurantId = 1
             };
 
             _mockIngredientService
@@ -149,7 +154,8 @@ namespace RestFlow.Tests
                 Name = "Updated Flour",
                 Quantity = 30,
                 PricePerUnit = 1.8m,
-                Description = "Updated description"
+                Description = "Updated description",
+                RestaurantId = 1
             };
 
             var result = await _controller.Update(ingredientId, ingredient) as BadRequestResult;

@@ -29,7 +29,8 @@ namespace RestFlow.Tests
                 Price = 20.0m,
                 CategoryId = 1,
                 IsAvailable = true,
-                Description = "Updated Description"
+                Description = "Updated Description",
+                RestaurantId = 1,
             };
 
             var dish = new Dish
@@ -39,7 +40,8 @@ namespace RestFlow.Tests
                 Price = dishDto.Price,
                 CategoryId = dishDto.CategoryId,
                 IsAvailable = dishDto.IsAvailable,
-                Description = dishDto.Description
+                Description = dishDto.Description,
+                RestaurantId = dishDto.RestaurantId,
             };
 
             _mockDishService.Setup(service => service.GetById(dishDto.DishId))
@@ -85,7 +87,8 @@ namespace RestFlow.Tests
                 CategoryId = 1,
                 IsAvailable = true,
                 IngredientsId = new List<int> { 1 },
-                Description = "New Description"
+                Description = "New Description",
+                RestaurantId = 1
             };
 
             _mockDishService.Setup(service => service.Add(
@@ -94,7 +97,8 @@ namespace RestFlow.Tests
                 dishDto.CategoryId,
                 dishDto.IsAvailable,
                 dishDto.IngredientsId,
-                dishDto.Description))
+                dishDto.Description,
+                dishDto.RestaurantId))
                 .Returns(Task.CompletedTask);
 
             var result = await _controller.AddDish(dishDto) as OkObjectResult;
@@ -108,14 +112,14 @@ namespace RestFlow.Tests
         {
             var dishes = new List<Dish>
     {
-        new Dish { DishId = 1, Name = "Dish 1", Price = 10.0m, CategoryId = 1, IsAvailable = true, Description = "Description 1" },
-        new Dish { DishId = 2, Name = "Dish 2", Price = 20.0m, CategoryId = 2, IsAvailable = false, Description = "Description 2" }
+        new Dish { DishId = 1, Name = "Dish 1", Price = 10.0m, CategoryId = 1, IsAvailable = true, Description = "Description 1", RestaurantId = 1 },
+        new Dish { DishId = 2, Name = "Dish 2", Price = 20.0m, CategoryId = 2, IsAvailable = false, Description = "Description 2", RestaurantId = 1 }
     };
 
-            _mockDishService.Setup(service => service.GetAll())
+            _mockDishService.Setup(service => service.GetAllByRestaurantId(1))
                 .ReturnsAsync(dishes);
 
-            var result = await _controller.GetDishes() as OkObjectResult;
+            var result = await _controller.GetDishes(1) as OkObjectResult;
 
             result.Should().NotBeNull();
             result.StatusCode.Should().Be(200);
@@ -133,7 +137,8 @@ namespace RestFlow.Tests
                 Price = 10.0m,
                 CategoryId = 1,
                 IsAvailable = true,
-                Description = "Description"
+                Description = "Description",
+                RestaurantId = 1
             };
 
             _mockDishService.Setup(service => service.GetById(dishId))

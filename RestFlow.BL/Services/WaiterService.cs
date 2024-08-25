@@ -42,12 +42,12 @@ namespace RestFlow.BL.Services
             }
         }
 
-        public async Task<IEnumerable<Waiter>> GetAll()
+        public async Task<IEnumerable<Waiter>> GetAllByRestaurantId(int restaurantId)
         {
             try
             {
                 _logger.LogInformation("Attempting to fetch all Waiters");
-                var waiters = await _waiterRepository.GetAll();
+                var waiters = await _waiterRepository.GetAllByRestaurantId(restaurantId);
                 return waiters;
             }
             catch (Exception ex)
@@ -57,12 +57,12 @@ namespace RestFlow.BL.Services
             }
         }
 
-        public async Task Add(string fullname, string password, string contactInformation)
+        public async Task Add(string fullname, string password, string contactInformation, int restaurantId)
         {
             try
             {
                 _logger.LogInformation($"Attempting to add Waiter: {fullname}");
-                Waiter waiter = _modelFactory.CreateWaiter(fullname, password, contactInformation);
+                Waiter waiter = _modelFactory.CreateWaiter(fullname, password, contactInformation, restaurantId);
                 await _waiterRepository.Add(waiter);
                 _logger.LogInformation($"Successfully added Waiter with ID: {waiter.WaiterId}");
             }
@@ -88,13 +88,12 @@ namespace RestFlow.BL.Services
             }
         }
 
-        public async Task<Waiter> Login(string fullName, string password)
+        public async Task<Waiter> Login(string fullName, string password, int restaurantId)
         {
             try
             {
                 _logger.LogInformation("Attempting to login Waiter");
-                IEnumerable<Waiter> waiters = await _waiterRepository.GetAll();
-                var waiter = waiters.FirstOrDefault(w => w.FullName == fullName && w.Password == password);
+                var waiter = await _waiterRepository.Login(fullName, password, restaurantId);
                 if (waiter == null)
                 {
                     _logger.LogWarning("Invalid login attempt");

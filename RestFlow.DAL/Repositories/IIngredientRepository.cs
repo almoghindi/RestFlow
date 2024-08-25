@@ -5,7 +5,7 @@ namespace RestFlow.DAL.Repositories
     public interface IIngredientRepository
     {
         Task<Ingredient> GetById(int id);
-        Task<IEnumerable<Ingredient>> GetAll();
+        Task<IEnumerable<Ingredient>> GetAllByRestaurantId(int restaurantId);
         Task Add(Ingredient ingredient);
         Task Update(Ingredient ingredient);
         Task Delete(int id);

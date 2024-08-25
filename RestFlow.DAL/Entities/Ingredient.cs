@@ -10,6 +10,11 @@ namespace RestFlow.DAL.Entities
         public int IngredientId { get; set; }
 
         [Required]
+        [ForeignKey("Restaurant")]
+        public int RestaurantId { get; set; }
+        public Restaurant Restaurant { get; set; }
+
+        [Required]
         [StringLength(100)]
         public string Name { get; set; }
 

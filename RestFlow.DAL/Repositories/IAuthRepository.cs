@@ -8,8 +8,8 @@ namespace RestFlow.DAL.Repositories
 {
     public interface IAuthRepository
     {
-        Task<bool> Signup(string userName, string password);
-        Task<bool> Login(string userName, string password);
+        Task<bool> Signup(string userName, string password, int restaurantId);
+        Task<bool> Login(string userName, string password, int restaurantId);
         Task Logout();
     }
 }

@@ -22,9 +22,9 @@ namespace RestFlow.DAL.Repositories
             return await _context.Tables.FindAsync(id);
         }
 
-        public async Task<IEnumerable<Table>> GetAll()
+        public async Task<IEnumerable<Table>> GetAllByRestaurantId(int restaurantId)
         {
-            return await _context.Tables.ToListAsync();
+            return await _context.Tables.Where(t => t.RestaurantId == restaurantId).ToListAsync();
         }
 
         public async Task Add(Table table)

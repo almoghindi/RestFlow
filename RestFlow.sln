@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestFlow.API", "RestFlow.API\RestFlow.API.csproj", "{47F52061-FD7A-489C-BCE8-79303FBDC6AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestFlow.API", "RestFlow.API\RestFlow.API.csproj", "{47F52061-FD7A-489C-BCE8-79303FBDC6AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestFlow.DAL", "RestFlow.DAL\RestFlow.DAL.csproj", "{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestFlow.DAL", "RestFlow.DAL\RestFlow.DAL.csproj", "{9D107C03-A90C-4239-9E22-4EDBCA5CC88B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestFlow.BL", "RestFlow.BL\RestFlow.BL.csproj", "{AA6510EB-08D6-41CF-BB41-8F8F75797666}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestFlow.BL", "RestFlow.BL\RestFlow.BL.csproj", "{AA6510EB-08D6-41CF-BB41-8F8F75797666}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestFlow.Tests", "RestFlow.Tests\RestFlow.Tests.csproj", "{B3037EEB-DDD6-47EA-89E7-7439322E277A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestFlow.Tests", "RestFlow.Tests\RestFlow.Tests.csproj", "{B3037EEB-DDD6-47EA-89E7-7439322E277A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestFlow.Common", "RestFlow.Common\RestFlow.Common.csproj", "{BF4F5331-A2A2-400D-A452-A843E3156A66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{B3037EEB-DDD6-47EA-89E7-7439322E277A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3037EEB-DDD6-47EA-89E7-7439322E277A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3037EEB-DDD6-47EA-89E7-7439322E277A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF4F5331-A2A2-400D-A452-A843E3156A66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF4F5331-A2A2-400D-A452-A843E3156A66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF4F5331-A2A2-400D-A452-A843E3156A66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF4F5331-A2A2-400D-A452-A843E3156A66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

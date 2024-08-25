@@ -1,33 +1,52 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
+using RestFlow.DAL.Entities;
 
 namespace RestFlow.DAL.Repositories
 {
     public class AuthRepository : IAuthRepository
     {
-        private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
         private readonly ILogger<AuthRepository> _logger;
 
-        public AuthRepository(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, ILogger<AuthRepository> logger)
+        public AuthRepository(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ILogger<AuthRepository> logger)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
         }
 
-        public async Task<bool> Signup(string userName, string password)
+        public async Task<bool> Signup(string userName, string password, int restaurantId)
         {
-            var user = new IdentityUser { UserName = userName };
+            var user = new ApplicationUser { UserName = userName, RestaurantId = restaurantId };
             var result = await _userManager.CreateAsync(user, password);
             _logger.LogInformation("Signed up succesfully");
             return result.Succeeded;
         }
 
-        public async Task<bool> Login(string userName, string password)
+        public async Task<bool> Login(string userName, string password, int restaurantId)
         {
+            var user = await _userManager.FindByNameAsync(userName);
+
+            if (user == null || user.RestaurantId != restaurantId)
+            {
+                _logger.LogWarning("Login failed: invalid username or restaurant ID");
+                return false;
+            }
+
+            // Check the password
             var result = await _signInManager.PasswordSignInAsync(userName, password, isPersistent: false, lockoutOnFailure: false);
-            _logger.LogInformation("Logged in succesfully");
+
+            if (result.Succeeded)
+            {
+                _logger.LogInformation("Logged in successfully with RestaurantId: {RestaurantId}", restaurantId);
+            }
+            else
+            {
+                _logger.LogWarning("Login failed: invalid password");
+            }
+
             return result.Succeeded;
         }
 

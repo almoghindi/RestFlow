@@ -20,12 +20,12 @@ namespace RestFlow.BL.Services
             _logger = logger;
         }
 
-        public async Task<IEnumerable<Category>> GetAll()
+        public async Task<IEnumerable<Category>> GetAllByRestaurantId(int restaurantId)
         {
             try
             {
                 _logger.LogInformation("Fetching all categories from BL.");
-                var categories = await _categoryRepository.GetAll();
+                var categories = await _categoryRepository.GetAllByRestaurantId(restaurantId);
                 _logger.LogInformation("Categories fetched successfully from BL.");
                 return categories;
             }
@@ -57,12 +57,12 @@ namespace RestFlow.BL.Services
             }
         }
 
-        public async Task Add(string name, string description)
+        public async Task Add(string name, string description, int restaurantId)
         {
             try
             {
                 _logger.LogInformation("Adding a new category from BL.");
-                Category category = _modelFactory.CreateCategory(name, description);
+                Category category = _modelFactory.CreateCategory(name, description, restaurantId);
                 await _categoryRepository.Add(category);
                 _logger.LogInformation("Category added successfully in BL.");
             }

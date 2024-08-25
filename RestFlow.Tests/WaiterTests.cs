@@ -30,7 +30,8 @@ namespace RestFlow.Tests
             {
                 WaiterId = waiterId,
                 FullName = "John Doe",
-                ContactInformation = "123-456-7890"
+                ContactInformation = "123-456-7890",
+                RestaurantId = 1
             };
 
             _mockWaiterService.Setup(service => service.GetById(waiterId))
@@ -64,14 +65,14 @@ namespace RestFlow.Tests
         {
             var waiters = new List<Waiter>
             {
-                new Waiter { WaiterId = 1, FullName = "John Doe", ContactInformation = "123-456-7890" },
-                new Waiter { WaiterId = 2, FullName = "Jane Smith", ContactInformation = "987-654-3210" }
+                new Waiter { WaiterId = 1, FullName = "John Doe", ContactInformation = "123-456-7890", RestaurantId = 1 },
+                new Waiter { WaiterId = 2, FullName = "Jane Smith", ContactInformation = "987-654-3210", RestaurantId = 1 }
             };
 
-            _mockWaiterService.Setup(service => service.GetAll())
+            _mockWaiterService.Setup(service => service.GetAllByRestaurantId(1))
                 .ReturnsAsync(waiters);
 
-            var result = await _controller.GetAll() as ActionResult<IEnumerable<Waiter>>;
+            var result = await _controller.GetAll(1) as ActionResult<IEnumerable<Waiter>>;
 
             result.Result.Should().BeOfType<OkObjectResult>();
             var okResult = result.Result as OkObjectResult;
@@ -86,7 +87,8 @@ namespace RestFlow.Tests
             {
                 FullName = "John Doe",
                 Password = "password",
-                ContactInformation = "123-456-7890"
+                ContactInformation = "123-456-7890",
+                RestaurantId = 1
             };
 
             var result = await _controller.Create(waiterDto) as OkObjectResult;
@@ -116,17 +118,19 @@ namespace RestFlow.Tests
             var loginDto = new WaiterLoginDTO
             {
                 FullName = "John Doe",
-                Password = "password"
+                Password = "password",
+                RestaurantId = 1
             };
 
             var waiter = new Waiter
             {
                 WaiterId = 1,
                 FullName = "John Doe",
-                ContactInformation = "123-456-7890"
+                ContactInformation = "123-456-7890",
+                RestaurantId = 1
             };
 
-            _mockWaiterService.Setup(service => service.Login(loginDto.FullName, loginDto.Password))
+            _mockWaiterService.Setup(service => service.Login(loginDto.FullName, loginDto.Password, loginDto.RestaurantId))
                 .ReturnsAsync(waiter);
 
             var result = await _controller.Login(loginDto) as ActionResult<Waiter>;
@@ -143,10 +147,11 @@ namespace RestFlow.Tests
             var loginDto = new WaiterLoginDTO
             {
                 FullName = "John Doe",
-                Password = "wrongpassword"
+                Password = "wrongpassword",
+                RestaurantId = 1
             };
 
-            _mockWaiterService.Setup(service => service.Login(loginDto.FullName, loginDto.Password))
+            _mockWaiterService.Setup(service => service.Login(loginDto.FullName, loginDto.Password, loginDto.RestaurantId))
                 .ReturnsAsync((Waiter)null);
 
             var result = await _controller.Login(loginDto) as ActionResult<Waiter>;

@@ -9,11 +9,12 @@ namespace RestFlow.BL.Factory
 {
     public interface IModelFactory
     {
-        Category CreateCategory(string name, string description);
-        Dish CreateDish(string name, decimal price, int categoryId, List<Ingredient> ingredients, string description);
-        Ingredient CreateIngredient(string name, decimal quantity, decimal pricePerUnit, string description);
-        Order CreateOrder(int tableId, int waiterId);
-        Table CreateTable(string tableNumber, int capacity, bool isAvailable = true);
-        Waiter CreateWaiter(string fullName, string password, string contactInformation);
+        Category CreateCategory(string name, string description, int restaurantId);
+        Dish CreateDish(string name, decimal price, int categoryId, string description, int restaurantId);
+        Ingredient CreateIngredient(string name, decimal quantity, decimal pricePerUnit, string description, int restaurantId);
+        Order CreateOrder(int tableId, int waiterId, int restaurantId);
+        Restaurant CreateRestaurant(string name, string password);
+        Table CreateTable(string tableNumber, int capacity, int restaurantIdbool,bool isAvailable = true);
+        Waiter CreateWaiter(string fullName, string password, string contactInformation, int restaurantId);
     }
 }

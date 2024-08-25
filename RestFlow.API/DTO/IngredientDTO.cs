@@ -5,6 +5,8 @@ namespace RestFlow.API.DTO
     public class IngredientDTO
     {
         [Required]
+        public int RestaurantId { get; set; }
+        [Required]
         [StringLength(100)]
         public string Name { get; set; }
 

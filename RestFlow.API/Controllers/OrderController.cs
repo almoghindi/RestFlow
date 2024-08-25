@@ -20,86 +20,113 @@ namespace RestFlow.API.Controllers
         [HttpPost]
         public async Task<ActionResult<Order>> InitializeOrder(OrderDTO orderDTO)
         {
-            try
+            if (orderDTO == null)
             {
-                var order = await _orderService.InitializeOrder(orderDTO.WaiterId, orderDTO.TableId);
-                return Ok(order);
+                return BadRequest("Order is null");
             }
-            catch (Exception ex)
+            var order = await _orderService.InitializeOrder(orderDTO.WaiterId, orderDTO.TableId, orderDTO.RestaurantId);
+            if (order == null)
             {
-                return BadRequest(ex.Message);
+                return BadRequest("Order is null");
             }
+            return Ok(order);
         }
 
         [HttpGet("{orderId}")]
         public async Task<IActionResult> GetOrderById(int orderId)
         {
-            try
+            if (orderId == 0)
             {
-                var order = await _orderService.GetOrderById(orderId);
-                return Ok(order);
+                return BadRequest("Order id is null");
             }
-            catch (Exception ex)
+
+            var order = await _orderService.GetOrderById(orderId);
+            if (order == null)
             {
-                return BadRequest(new { error = ex.Message });
+                return BadRequest("Order is null");
             }
+            return Ok(order);
         }
 
 
         [HttpPost("{orderId}/addDish")]
         public async Task<ActionResult> AddDishToOrder(int orderId, AddDishDTO addDishDTO)
         {
-            try
+            if (orderId == 0)
             {
-                await _orderService.AddDishToOrder(orderId, addDishDTO.DishId);
-                return NoContent();
+                return BadRequest("Order id is null");
             }
-            catch (Exception ex)
+            if (addDishDTO == null)
             {
-                return BadRequest(ex.Message);
+                return BadRequest("Dish is null");
             }
+            await _orderService.AddDishToOrder(orderId, addDishDTO.DishId);
+            return NoContent();
+
         }
 
         [HttpPost("{orderId}/remove-dish/{dishId}")]
         public async Task<IActionResult> RemoveDishFromOrder(int orderId, int dishId)
         {
-            try
+            if (orderId == 0)
             {
-                await _orderService.RemoveDishFromOrder(orderId, dishId);
-                return Ok(new { message = $"Dish {dishId} removed from order {orderId}." });
+                return BadRequest("Order id is null");
             }
-            catch (Exception ex)
+            if (dishId == 0)
             {
-                return BadRequest(new { error = ex.Message });
+                return BadRequest("Dish id is null");
             }
+            await _orderService.RemoveDishFromOrder(orderId, dishId);
+            return Ok(new { message = $"Dish {dishId} removed from order {orderId}." });
+
         }
 
         [HttpPost("{orderId}/closeAndPay")]
         public async Task<ActionResult<Order>> CloseAndPayOrder(int orderId)
         {
-            try
+            if (orderId == 0)
             {
-                var order = await _orderService.CloseAndPayOrder(orderId);
-                return Ok(order);
+                return BadRequest("Order id is null");
             }
-            catch (Exception ex)
+
+            var order = await _orderService.CloseAndPayOrder(orderId);
+            if (order == null)
             {
-                return BadRequest(ex.Message);
+                return BadRequest("Orders is null");
             }
+            return Ok(order);
+        }
+
+        [HttpGet("")]
+        public async Task<ActionResult<IEnumerable<Order>>> GetCompletedOrdersByRestaurantId(int restaurantId)
+        {
+            if (restaurantId == 0)
+            {
+                return BadRequest("Order id is null");
+            }
+
+            var orders = await _orderService.GetCompletedOrdersByRestaurantId(restaurantId);
+            if (orders == null)
+            {
+                return BadRequest("Orders is null");
+            }
+            return Ok(orders);
         }
 
         [HttpGet("queue")]
-        public async Task<ActionResult<IEnumerable<Order>>> GetOrdersQueue()
+        public async Task<ActionResult<IEnumerable<Order>>> GetOrdersQueue(int restaurantId)
         {
-            try
+            if (restaurantId == 0)
             {
-                var orders = await _orderService.GetOrdersQueue();
-                return Ok(orders);
+                return BadRequest("Order id is null");
             }
-            catch (Exception ex)
+
+            var orders = await _orderService.GetOrdersQueue(restaurantId);
+            if (orders == null)
             {
-                return BadRequest(ex.Message);
+                return BadRequest("Orders is null");
             }
+            return Ok(orders);
         }
     }
 

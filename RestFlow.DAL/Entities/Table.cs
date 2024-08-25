@@ -11,6 +11,11 @@ namespace RestFlow.DAL.Entities
         public int TableId { get; set; }
 
         [Required]
+        [ForeignKey("Restaurant")]
+        public int RestaurantId { get; set; }
+        public Restaurant Restaurant { get; set; }
+
+        [Required]
         [StringLength(50)]
         public string TableNumber { get; set; }
 

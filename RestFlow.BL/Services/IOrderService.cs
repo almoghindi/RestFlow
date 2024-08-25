@@ -9,11 +9,12 @@ namespace RestFlow.BL.Services
 {
     public interface IOrderService
     {
-        Task<Order> InitializeOrder(int waiterId, int tableId);
+        Task<Order> InitializeOrder(int waiterId, int tableId, int restaurantId);
         Task<Order> GetOrderById(int orderId);
         Task AddDishToOrder(int orderId, int dishId);
         Task RemoveDishFromOrder(int orderId, int dishId);
+        Task<IEnumerable<Order>> GetCompletedOrdersByRestaurantId(int restaurantId);
         Task<Order> CloseAndPayOrder(int orderId);
-        Task<IEnumerable<Order>> GetOrdersQueue();
+        Task<IEnumerable<Order>> GetOrdersQueue(int restaurantId);
     }
 }

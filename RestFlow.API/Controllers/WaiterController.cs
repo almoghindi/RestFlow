@@ -2,6 +2,7 @@
 using RestFlow.API.DTO;
 using RestFlow.BL.Services;
 using RestFlow.DAL.Entities;
+using static StackExchange.Redis.Role;
 
 namespace RestFlow.API.Controllers
 {
@@ -20,6 +21,10 @@ namespace RestFlow.API.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Waiter>> Get(int id)
         {
+            if (id == 0)
+            {
+                return BadRequest("Waiter id is null");
+            }
             var waiter = await _waiterService.GetById(id);
             if (waiter == null)
             {
@@ -29,22 +34,38 @@ namespace RestFlow.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Waiter>>> GetAll()
+        public async Task<ActionResult<IEnumerable<Waiter>>> GetAll(int restaurantId)
         {
-            var waiters = await _waiterService.GetAll();
+            if (restaurantId == 0)
+            {
+                return BadRequest("Restaurant id is null");
+            }
+            var waiters = await _waiterService.GetAllByRestaurantId(restaurantId);
+            if (waiters == null)
+            {
+                return NotFound();
+            }
             return Ok(waiters);
         }
 
         [HttpPost]
         public async Task<ActionResult> Create(WaiterDTO waiter)
         {
-            await _waiterService.Add(waiter.FullName, waiter.Password, waiter.ContactInformation);
+            if (waiter == null)
+            {
+                return BadRequest("Waiter is null");
+            }
+            await _waiterService.Add(waiter.FullName, waiter.Password, waiter.ContactInformation, waiter.RestaurantId);
             return Ok(waiter);
         }
 
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
+            if (id == 0)
+            {
+                return BadRequest("Waiter id is null");
+            }
             await _waiterService.Delete(id);
             return NoContent();
         }
@@ -52,7 +73,11 @@ namespace RestFlow.API.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<Waiter>> Login(WaiterLoginDTO loginDto)
         {
-            var waiter = await _waiterService.Login(loginDto.FullName, loginDto.Password);
+            if(loginDto == null)
+            {
+                return BadRequest("Invalid Credentials");
+            }
+            var waiter = await _waiterService.Login(loginDto.FullName, loginDto.Password, loginDto.RestaurantId);
             if (waiter == null)
             {
                 return Unauthorized();

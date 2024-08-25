@@ -42,12 +42,12 @@ namespace RestFlow.BL.Services
             }
         }
 
-        public async Task<IEnumerable<Ingredient>> GetAll()
+        public async Task<IEnumerable<Ingredient>> GetAllByRestaurantId(int restaurantId)
         {
             try
             {
                 _logger.LogInformation("Attempting to retrieve all ingredients");
-                return await _ingredientRepository.GetAll();
+                return await _ingredientRepository.GetAllByRestaurantId(restaurantId);
             }
             catch (Exception ex)
             {
@@ -56,12 +56,12 @@ namespace RestFlow.BL.Services
             }
         }
 
-        public async Task Add(string name, decimal quantity, decimal pricePerUnit, string description)
+        public async Task Add(string name, decimal quantity, decimal pricePerUnit, string description, int restaurantId)
         {
             try
             {
                 _logger.LogInformation($"Attempting to add a new ingredient: {name}");
-                Ingredient ingredient = _modelFactory.CreateIngredient(name, quantity, pricePerUnit, description);
+                Ingredient ingredient = _modelFactory.CreateIngredient(name, quantity, pricePerUnit, description, restaurantId);
                 await _ingredientRepository.Add(ingredient);
             }
             catch (Exception ex)

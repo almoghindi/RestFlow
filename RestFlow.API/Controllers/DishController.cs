@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using RestFlow.API.DTO;
 using RestFlow.BL.Services;
 using RestFlow.DAL.Entities;
@@ -18,15 +17,29 @@ namespace RestFlow.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetDishes()
+        public async Task<IActionResult> GetDishes(int restaurantId)
         {
-            var dishes = await _dishService.GetAll();
+            if (restaurantId == 0)
+            {
+                return BadRequest("Restaurant id is 0");
+            }
+
+            var dishes = await _dishService.GetAllByRestaurantId(restaurantId);
+            if (dishes == null)
+            {
+                return NotFound();
+            }
             return Ok(dishes);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetDishById(int id)
         {
+            if (id == 0)
+            {
+                return BadRequest("Dish id is 0");
+            }
+
             var dish = await _dishService.GetById(id);
             if (dish == null)
             {
@@ -42,15 +55,18 @@ namespace RestFlow.API.Controllers
             {
                 return BadRequest("Dish data is null.");
             }
-            Console.WriteLine(dish);
 
-            await _dishService.Add(dish.Name, dish.Price,dish.CategoryId ,dish.IsAvailable, dish.IngredientsId, dish.Description);
+            await _dishService.Add(dish.Name, dish.Price, dish.CategoryId, dish.IsAvailable, dish.IngredientsId, dish.Description, dish.RestaurantId);
             return Ok(nameof(GetDishById));
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateDish(int id, Dish dish)
         {
+            if (id == 0)
+            {
+                return BadRequest("Dish id is 0");
+            }
             if (id != dish.DishId)
             {
                 return BadRequest("Dish ID mismatch.");
@@ -69,6 +85,10 @@ namespace RestFlow.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteDish(int id)
         {
+            if (id == 0)
+            {
+                return BadRequest("Dish id is 0");
+            }
             var existingDish = await _dishService.GetById(id);
             if (existingDish == null)
             {

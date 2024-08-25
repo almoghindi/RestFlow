@@ -16,9 +16,18 @@ namespace RestFlow.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetCategories()
+        public async Task<IActionResult> GetCategories(int restaurantId)
         {
-            var categories = await _categoryService.GetAll();
+            if (restaurantId == 0)
+            {
+                return BadRequest("Restaurant id is 0");
+            }
+
+            var categories = await _categoryService.GetAllByRestaurantId(restaurantId);
+            if (categories == null)
+            {
+                return NotFound();
+            }
             return Ok(categories);
         }
 
@@ -30,19 +39,17 @@ namespace RestFlow.API.Controllers
                 return BadRequest("Category data is null.");
             }
 
-            await _categoryService.Add(category.Name, category.Description);
+            await _categoryService.Add(category.Name, category.Description, category.RestaurantId);
             return CreatedAtAction(nameof(GetCategories), new { id = category.CategoryId }, category);
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {
-            var existingCategory = await _categoryService.GetAll();
-            if (existingCategory.All(c => c.CategoryId != id))
+            if (id == 0)
             {
-                return NotFound("Category not found.");
+                return BadRequest("Category id is 0");
             }
-
             await _categoryService.Delete(id);
             return NoContent();
         }
@@ -50,15 +57,17 @@ namespace RestFlow.API.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCategory(int id, Category category)
         {
+            if(id == 0)
+            {
+                return BadRequest("Category id is 0");
+            }
+            if (category == null)
+            {
+                return BadRequest("Category data is null.");
+            }
             if (id != category.CategoryId)
             {
                 return BadRequest("Category ID mismatch.");
-            }
-
-            var existingCategory = await _categoryService.GetAll();
-            if (existingCategory.All(c => c.CategoryId != id))
-            {
-                return NotFound("Category not found.");
             }
 
             await _categoryService.Update(category);

@@ -5,6 +5,8 @@ namespace RestFlow.API.DTO
     public class TableDTO
     {
         [Required]
+        public int RestaurantId { get; set; }
+        [Required]
         [StringLength(50)]
         public string TableNumber { get; set; }
 

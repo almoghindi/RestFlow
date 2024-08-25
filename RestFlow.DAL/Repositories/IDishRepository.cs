@@ -9,7 +9,7 @@ namespace RestFlow.DAL.Repositories
 {
     public interface IDishRepository
     {
-        Task<IEnumerable<Dish>> GetAll();
+        Task<IEnumerable<Dish>> GetAllByRestaurantId(int restaurantId);
         Task<Dish> GetById(int dishId);
         Task Add(Dish dish);
         Task Update(Dish dish);

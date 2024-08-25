@@ -29,17 +29,19 @@ namespace RestFlow.Tests
             var orderDTO = new OrderDTO
             {
                 WaiterId = 1,
-                TableId = 1
+                TableId = 1,
+                RestaurantId = 1,
             };
 
             var order = new Order
             {
                 OrderId = 1,
                 WaiterId = orderDTO.WaiterId,
-                TableId = orderDTO.TableId
+                TableId = orderDTO.TableId,
+                RestaurantId = orderDTO.RestaurantId,
             };
 
-            _mockOrderService.Setup(service => service.InitializeOrder(orderDTO.WaiterId, orderDTO.TableId))
+            _mockOrderService.Setup(service => service.InitializeOrder(orderDTO.WaiterId, orderDTO.TableId, orderDTO.RestaurantId))
                 .ReturnsAsync(order);
 
             var result = await _controller.InitializeOrder(orderDTO) as ActionResult<Order>;
@@ -56,18 +58,15 @@ namespace RestFlow.Tests
             var orderDTO = new OrderDTO
             {
                 WaiterId = 1,
-                TableId = 1
+                TableId = 1,
+                RestaurantId = 1,
             };
 
-            _mockOrderService.Setup(service => service.InitializeOrder(orderDTO.WaiterId, orderDTO.TableId))
+            _mockOrderService.Setup(service => service.InitializeOrder(orderDTO.WaiterId, orderDTO.TableId, orderDTO.RestaurantId))
                 .ThrowsAsync(new Exception("Initialization error"));
 
-            var result = await _controller.InitializeOrder(orderDTO) as ActionResult<Order>;
+            await Assert.ThrowsAsync<Exception>(async () => await _controller.InitializeOrder(orderDTO));
 
-            result.Result.Should().BeOfType<BadRequestObjectResult>();
-            var badRequestResult = result.Result as BadRequestObjectResult;
-            badRequestResult.StatusCode.Should().Be(400);
-            badRequestResult.Value.Should().Be("Initialization error");
         }
 
         [Fact]
@@ -78,7 +77,8 @@ namespace RestFlow.Tests
             {
                 OrderId = orderId,
                 WaiterId = 1,
-                TableId = 1
+                TableId = 1,
+                RestaurantId = 1,
             };
 
             _mockOrderService.Setup(service => service.GetOrderById(orderId))
@@ -98,14 +98,9 @@ namespace RestFlow.Tests
             var orderId = 1;
 
             _mockOrderService.Setup(service => service.GetOrderById(orderId))
-                .ThrowsAsync(new Exception("Get order error"));
+                .ThrowsAsync(new Exception("Order is null"));
 
-            var result = await _controller.GetOrderById(orderId) as IActionResult;
-
-            result.Should().BeOfType<BadRequestObjectResult>();
-            var badRequestResult = result as BadRequestObjectResult;
-            badRequestResult.StatusCode.Should().Be(400);
-            badRequestResult.Value.Should().BeEquivalentTo(new { error = "Get order error" });
+            await Assert.ThrowsAsync<Exception>(async () => await _controller.GetOrderById(orderId));
         }
 
         [Fact]
@@ -139,12 +134,7 @@ namespace RestFlow.Tests
             _mockOrderService.Setup(service => service.AddDishToOrder(orderId, addDishDTO.DishId))
                 .ThrowsAsync(new Exception("Add dish error"));
 
-            var result = await _controller.AddDishToOrder(orderId, addDishDTO) as ActionResult;
-
-            result.Should().BeOfType<BadRequestObjectResult>();
-            var badRequestResult = result as BadRequestObjectResult;
-            badRequestResult.StatusCode.Should().Be(400);
-            badRequestResult.Value.Should().Be("Add dish error");
+            await Assert.ThrowsAsync<Exception>(async () => await _controller.AddDishToOrder(orderId, addDishDTO));
         }
 
         [Fact]
@@ -173,12 +163,7 @@ namespace RestFlow.Tests
             _mockOrderService.Setup(service => service.RemoveDishFromOrder(orderId, dishId))
                 .ThrowsAsync(new Exception("Remove dish error"));
 
-            var result = await _controller.RemoveDishFromOrder(orderId, dishId) as IActionResult;
-
-            result.Should().BeOfType<BadRequestObjectResult>();
-            var badRequestResult = result as BadRequestObjectResult;
-            badRequestResult.StatusCode.Should().Be(400);
-            badRequestResult.Value.Should().BeEquivalentTo(new { error = "Remove dish error" });
+            await Assert.ThrowsAsync<Exception>(async () => await _controller.RemoveDishFromOrder(orderId, dishId));
         }
 
         [Fact]
@@ -211,12 +196,7 @@ namespace RestFlow.Tests
             _mockOrderService.Setup(service => service.CloseAndPayOrder(orderId))
                 .ThrowsAsync(new Exception("Close and pay error"));
 
-            var result = await _controller.CloseAndPayOrder(orderId) as ActionResult<Order>;
-
-            result.Result.Should().BeOfType<BadRequestObjectResult>();
-            var badRequestResult = result.Result as BadRequestObjectResult;
-            badRequestResult.StatusCode.Should().Be(400);
-            badRequestResult.Value.Should().Be("Close and pay error");
+            await Assert.ThrowsAsync<Exception>(async () => await _controller.CloseAndPayOrder(orderId));
         }
 
         [Fact]
@@ -224,14 +204,14 @@ namespace RestFlow.Tests
         {
             var orders = new List<Order>
             {
-                new Order { OrderId = 1, WaiterId = 1, TableId = 1 },
-                new Order { OrderId = 2, WaiterId = 2, TableId = 2 }
+                new Order { OrderId = 1, WaiterId = 1, TableId = 1, RestaurantId = 1 },
+                new Order { OrderId = 2, WaiterId = 2, TableId = 2, RestaurantId = 1 }
             };
 
-            _mockOrderService.Setup(service => service.GetOrdersQueue())
+            _mockOrderService.Setup(service => service.GetOrdersQueue(1))
                 .ReturnsAsync(orders);
 
-            var result = await _controller.GetOrdersQueue() as ActionResult<IEnumerable<Order>>;
+            var result = await _controller.GetOrdersQueue(1) as ActionResult<IEnumerable<Order>>;
 
             result.Result.Should().BeOfType<OkObjectResult>();
             var okResult = result.Result as OkObjectResult;
@@ -242,15 +222,11 @@ namespace RestFlow.Tests
         [Fact]
         public async Task GetOrdersQueue_ShouldReturnBadRequest_WhenExceptionIsThrown()
         {
-            _mockOrderService.Setup(service => service.GetOrdersQueue())
+            _mockOrderService.Setup(service => service.GetOrdersQueue(1))
                 .ThrowsAsync(new Exception("Get orders queue error"));
 
-            var result = await _controller.GetOrdersQueue() as ActionResult<IEnumerable<Order>>;
-
-            result.Result.Should().BeOfType<BadRequestObjectResult>();
-            var badRequestResult = result.Result as BadRequestObjectResult;
-            badRequestResult.StatusCode.Should().Be(400);
-            badRequestResult.Value.Should().Be("Get orders queue error");
+            var exception = await Assert.ThrowsAsync<Exception>(async () => await _controller.GetOrdersQueue(1));
+            exception.Message.Should().Be("Get orders queue error");
         }
     }
 }

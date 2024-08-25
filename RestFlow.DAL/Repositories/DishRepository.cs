@@ -16,10 +16,10 @@ namespace RestFlow.DAL.Repositories
             _logger = logger;
         }
 
-        public async Task<IEnumerable<Dish>> GetAll()
+        public async Task<IEnumerable<Dish>> GetAllByRestaurantId(int restaurantId)
         {
             _logger.LogInformation("Fetching all dishes from DAL.");
-            var dishes = await _context.Dishes.Include(d => d.Ingredients).ToListAsync();
+            var dishes = await _context.Dishes.Where(d => d.RestaurantId == restaurantId).Include(d => d.Ingredients).ToListAsync();
             foreach (var dish in dishes)
             {
                 dish.AreAllIngredientsAvailable();

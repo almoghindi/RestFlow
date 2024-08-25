@@ -19,6 +19,11 @@ namespace RestFlow.API.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Ingredient>> Get(int id)
         {
+            if (id == 0)
+            {
+                return BadRequest("Ingredient id is 0");
+            }
+
             var ingredient = await _ingredientService.GetById(id);
             if (ingredient == null)
             {
@@ -28,22 +33,43 @@ namespace RestFlow.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Ingredient>>> GetAll()
+        public async Task<ActionResult<IEnumerable<Ingredient>>> GetAll(int restaurantId)
         {
-            var ingredients = await _ingredientService.GetAll();
+            if(restaurantId == 0)
+            {
+                return BadRequest("Restaurant id is empty");
+            }
+            var ingredients = await _ingredientService.GetAllByRestaurantId(restaurantId);
+            if (ingredients == null)
+            {
+                return NotFound();
+            }
             return Ok(ingredients);
         }
 
         [HttpPost]
         public async Task<ActionResult> Create(IngredientDTO ingredient)
         {
-            await _ingredientService.Add(ingredient.Name, ingredient.Quantity, ingredient.PricePerUnit, ingredient.Description);
+            if (ingredient == null)
+            {
+                return BadRequest("Ingredient is null");
+            }
+
+            await _ingredientService.Add(ingredient.Name, ingredient.Quantity, ingredient.PricePerUnit, ingredient.Description, ingredient.RestaurantId);
             return Ok(ingredient);
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> Update(int id, [FromBody] Ingredient ingredient)
+        public async Task<ActionResult> Update(int id, Ingredient ingredient)
         {
+            if (id == 0)
+            {
+                return BadRequest("Ingredient id is 0");
+            }
+            if (ingredient == null)
+            {
+                return BadRequest("Ingredient is null");
+            }
             if (id != ingredient.IngredientId)
             {
                 return BadRequest();
@@ -56,20 +82,40 @@ namespace RestFlow.API.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
+            if (id == 0)
+            {
+                return BadRequest("Ingredient id is 0");
+            }
             await _ingredientService.Delete(id);
             return NoContent();
         }
 
         [HttpPost("{id}/addQuantity")]
-        public async Task<ActionResult> AddQuantity(int id, [FromBody] decimal quantityToAdd)
+        public async Task<ActionResult> AddQuantity(int id, decimal quantityToAdd)
         {
+            if (id == 0)
+            {
+                return BadRequest("Ingredient id is 0");
+            }
+            if (quantityToAdd == 0)
+            {      
+                return BadRequest("Quantity To Add is 0");               
+            }
             await _ingredientService.AddQuantity(id, quantityToAdd);
             return NoContent();
         }
 
         [HttpPost("{id}/removeQuantity")]
-        public async Task<ActionResult> RemoveQuantity(int id, [FromBody] decimal quantityToRemove)
+        public async Task<ActionResult> RemoveQuantity(int id, decimal quantityToRemove)
         {
+            if (id == 0)
+            {
+                return BadRequest("Ingredient id is 0");
+            }
+            if (quantityToRemove == 0)
+            {
+                return BadRequest("Quantity To Remove is 0");
+            }
             await _ingredientService.RemoveQuantity(id, quantityToRemove);
             return NoContent();
         }

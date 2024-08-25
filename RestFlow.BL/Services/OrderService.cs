@@ -28,7 +28,7 @@ namespace RestFlow.BL.Services
             _ordersQueue = new Queue<Order>();
         }
 
-        public async Task<Order> InitializeOrder(int waiterId, int tableId)
+        public async Task<Order> InitializeOrder(int waiterId, int tableId, int restaurantId)
         {
             try
             {
@@ -40,7 +40,7 @@ namespace RestFlow.BL.Services
                     throw new ArgumentException("Invalid Waiter or Table");
                 }
 
-                var order = _modelFactory.CreateOrder(tableId, waiterId);
+                var order = _modelFactory.CreateOrder(tableId, waiterId, restaurantId);
                 if(order == null)
                 {
                     throw new ArgumentException("Invalid order");
@@ -60,11 +60,11 @@ namespace RestFlow.BL.Services
             }
         }
 
-        private async Task LoadQueue()
+        private async Task LoadQueue(int restaurantId)
         {
             try
             {
-                var incompleteOrders = await _orderRepository.GetIncompleteOrders();
+                var incompleteOrders = await _orderRepository.GetIncompleteOrdersByRestaurantId(restaurantId);
 
                 foreach (var order in incompleteOrders)
                 {
@@ -124,6 +124,19 @@ namespace RestFlow.BL.Services
             }
         }
 
+        public async Task<IEnumerable<Order>> GetCompletedOrdersByRestaurantId(int restaurantId)
+        {
+            try
+            {
+                return await _orderRepository.GetCompletedOrdersByRestaurantId(restaurantId);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error retrieving completed orders for restaurant id: {restaurantId}");
+                throw;
+            }
+        }
+
         public async Task<Order> CloseAndPayOrder(int orderId)
         {
             try
@@ -137,13 +150,13 @@ namespace RestFlow.BL.Services
             }
         }
 
-        public async Task<IEnumerable<Order>> GetOrdersQueue()
+        public async Task<IEnumerable<Order>> GetOrdersQueue(int restaurantId)
         {
             try
             {
                 if(_ordersQueue.Count == 0)
                 {
-                    await LoadQueue();
+                    await LoadQueue(restaurantId);
                 }
                 return await _orderRepository.GetOrdersQueue();
             }

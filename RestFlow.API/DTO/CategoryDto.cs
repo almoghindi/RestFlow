@@ -9,6 +9,8 @@ namespace RestFlow.API.DTO
         [Key]
         public int CategoryId { get; set; }
         [Required]
+        public int RestaurantId { get; set; }
+        [Required]
         [StringLength(100)]
         public string Name { get; set; }
 

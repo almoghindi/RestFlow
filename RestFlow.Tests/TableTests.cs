@@ -30,7 +30,8 @@ namespace RestFlow.Tests
             {
                 TableId = tableId,
                 TableNumber = "5",
-                Capacity = 4
+                Capacity = 4,
+                RestaurantId = 1
             };
 
             _mockTableService.Setup(service => service.GetById(tableId))
@@ -64,14 +65,14 @@ namespace RestFlow.Tests
         {
             var tables = new List<Table>
             {
-                new Table { TableId = 1, TableNumber = "5", Capacity = 4 },
-                new Table { TableId = 2, TableNumber = "10", Capacity = 2 }
+                new Table { TableId = 1, TableNumber = "5", Capacity = 4, RestaurantId = 1 },
+                new Table { TableId = 2, TableNumber = "10", Capacity = 2 , RestaurantId = 1}
             };
 
-            _mockTableService.Setup(service => service.GetAll())
+            _mockTableService.Setup(service => service.GetAllByRestaurantId(1))
                 .ReturnsAsync(tables);
 
-            var result = await _controller.GetAll() as ActionResult<IEnumerable<Table>>;
+            var result = await _controller.GetAll(1) as ActionResult<IEnumerable<Table>>;
 
             result.Result.Should().BeOfType<OkObjectResult>();
             var okResult = result.Result as OkObjectResult;
@@ -85,7 +86,8 @@ namespace RestFlow.Tests
             var tableDto = new TableDTO
             {
                 TableNumber = "5",
-                Capacity = 4
+                Capacity = 4,
+                RestaurantId = 1
             };
 
             var result = await _controller.Create(tableDto) as OkObjectResult;

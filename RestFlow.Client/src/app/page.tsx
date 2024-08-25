@@ -4,6 +4,7 @@ import Image from "next/image";
 import Feature from "./feature";
 import { ArrowUpDown, Timer, Workflow } from "lucide-react";
 import Link from "next/link";
+import ContactForm from "./contact-form";
 
 export default function Home() {
   return (
@@ -28,12 +29,7 @@ export default function Home() {
             {`Get Started`}
           </Button>
         </Link>
-        <Image
-          width={1024}
-          height={632}
-          alt="Pandem.dev hero image"
-          src="/hero.png"
-        />
+        <Image width={1024} height={632} alt="Hero image" src="/hero.png" />
       </div>
       <div className="flex flex-col md:pt-24 md:gap-36 gap-24 items-center">
         <div className="flex flex-col gap-12 items-center">
@@ -66,27 +62,9 @@ export default function Home() {
             Quickly link new on-call tickets to similar past incidents and their
             solutions. All directly in Slack the moment an incident happens.
           </Typography>
-          <Image
-            width={1024}
-            height={632}
-            alt="Pandem.dev hero image"
-            src="/hero1.png"
-          />
+          <Image width={1024} height={632} alt="Hero image" src="/hero1.png" />
         </div>
-        <div className="flex flex-col gap-6 items-center">
-          <Typography className="max-w-2xl" variant="h1">
-            Get in touch
-          </Typography>
-          <div>Book a demo, or hop on a call</div>
-          <Link
-            href="https://map.sistilli.dev/public/coding/SaaS+Boilerplate"
-            target="_blank"
-          >
-            <Button size="tiny" variant="ghost">
-              {`Book now`}
-            </Button>
-          </Link>
-        </div>
+        <ContactForm />
       </div>
     </div>
   );

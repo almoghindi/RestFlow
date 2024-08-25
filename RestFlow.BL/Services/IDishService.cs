@@ -9,9 +9,9 @@ namespace RestFlow.BL.Services
 {
     public interface IDishService
     {
-        Task<IEnumerable<Dish>> GetAll();
+        Task<IEnumerable<Dish>> GetAllByRestaurantId(int restaurantId);
         Task<Dish> GetById(int dishId);
-        Task Add(string name, decimal price, int categoryId, bool isAvailable, List<int> ingredients, string description);
+        Task Add(string name, decimal price, int categoryId, bool isAvailable, List<int> ingredients, string description, int restaurantId);
         Task Update(Dish dish);
         Task Delete(int dishId);
         IEnumerable<Dish> GetDishesByCategory(int categoryId);
