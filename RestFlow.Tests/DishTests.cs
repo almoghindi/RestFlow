@@ -29,7 +29,7 @@ namespace RestFlow.Tests
                 Price = 20.0m,
                 CategoryId = 1,
                 IsAvailable = true,
-                Description = "Updated Description",
+                ImageUrl = "Updated Description",
                 RestaurantId = 1,
             };
 
@@ -40,7 +40,7 @@ namespace RestFlow.Tests
                 Price = dishDto.Price,
                 CategoryId = dishDto.CategoryId,
                 IsAvailable = dishDto.IsAvailable,
-                Description = dishDto.Description,
+                ImageUrl = dishDto.ImageUrl,
                 RestaurantId = dishDto.RestaurantId,
             };
 
@@ -66,7 +66,7 @@ namespace RestFlow.Tests
                 Price = 20.0m,
                 CategoryId = 2,
                 IsAvailable = true,
-                Description = "Updated Description"
+                ImageUrl = "Updated Description"
             };
 
             var result = await _controller.UpdateDish(1, dish) as BadRequestObjectResult;
@@ -87,7 +87,7 @@ namespace RestFlow.Tests
                 CategoryId = 1,
                 IsAvailable = true,
                 IngredientsId = new List<int> { 1 },
-                Description = "New Description",
+                ImageUrl = "New Description",
                 RestaurantId = 1
             };
 
@@ -97,7 +97,7 @@ namespace RestFlow.Tests
                 dishDto.CategoryId,
                 dishDto.IsAvailable,
                 dishDto.IngredientsId,
-                dishDto.Description,
+                dishDto.ImageUrl,
                 dishDto.RestaurantId))
                 .Returns(Task.CompletedTask);
 
@@ -105,15 +105,15 @@ namespace RestFlow.Tests
 
             result.Should().NotBeNull();
             result.StatusCode.Should().Be(200);
-            result.Value.Should().Be("GetDishById");
+            result.Value.Should().Be(dishDto);
         }
         [Fact]
         public async Task GetDishes_ShouldReturnOkResult_WhenDishesExist()
         {
             var dishes = new List<Dish>
     {
-        new Dish { DishId = 1, Name = "Dish 1", Price = 10.0m, CategoryId = 1, IsAvailable = true, Description = "Description 1", RestaurantId = 1 },
-        new Dish { DishId = 2, Name = "Dish 2", Price = 20.0m, CategoryId = 2, IsAvailable = false, Description = "Description 2", RestaurantId = 1 }
+        new Dish { DishId = 1, Name = "Dish 1", Price = 10.0m, CategoryId = 1, IsAvailable = true, ImageUrl = "Description 1", RestaurantId = 1 },
+        new Dish { DishId = 2, Name = "Dish 2", Price = 20.0m, CategoryId = 2, IsAvailable = false, ImageUrl = "Description 2", RestaurantId = 1 }
     };
 
             _mockDishService.Setup(service => service.GetAllByRestaurantId(1))
@@ -137,7 +137,7 @@ namespace RestFlow.Tests
                 Price = 10.0m,
                 CategoryId = 1,
                 IsAvailable = true,
-                Description = "Description",
+                ImageUrl = "Description",
                 RestaurantId = 1
             };
 

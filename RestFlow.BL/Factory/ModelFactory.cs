@@ -16,14 +16,14 @@ namespace RestFlow.BL.Factory
             };
         }
 
-        public Dish CreateDish(string name, decimal price, int categoryId, string description, int restaurantId)
+        public Dish CreateDish(string name, decimal price, int categoryId, string imageUrl, int restaurantId)
         {
             return new Dish
             {
                 Name = name,
                 Price = price,
                 CategoryId = categoryId,
-                Description = description,
+                ImageUrl = imageUrl,
                 IsAvailable = true,
                 Ingredients = new List<Ingredient>(),
                 RestaurantId = restaurantId

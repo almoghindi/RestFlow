@@ -37,7 +37,7 @@ namespace RestFlow.DAL.Repositories
         public async Task Add(Waiter waiter)
         {
             _logger.LogInformation($"Adding Waiter with ID: {waiter.WaiterId}");
-            _context.Waiters.Add(waiter);
+            _context.Waiters.AddAsync(waiter);
             await _context.SaveChangesAsync();
             _logger.LogInformation($"Waiter with ID: {waiter.WaiterId} added successfully");
         }

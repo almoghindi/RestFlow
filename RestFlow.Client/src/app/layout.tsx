@@ -55,7 +55,6 @@ export default function RootLayout({
               disableTransitionOnChange
             >
               <main className={`flex min-h-screen flex-col ${inter.className}`}>
-                <Header />
                 <div className="flex flex-1 justify-center w-full">
                   <div className="flex h-full">{children}</div>
                 </div>

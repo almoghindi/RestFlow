@@ -20,10 +20,10 @@ namespace RestFlow.DAL.Repositories
         {
             _logger.LogInformation("Fetching all dishes from DAL.");
             var dishes = await _context.Dishes.Where(d => d.RestaurantId == restaurantId).Include(d => d.Ingredients).ToListAsync();
-            foreach (var dish in dishes)
-            {
-                dish.AreAllIngredientsAvailable();
-            }
+            //foreach (var dish in dishes)
+            //{
+            //    dish.AreAllIngredientsAvailable();
+            //}
             return dishes;
         }
 
@@ -35,13 +35,13 @@ namespace RestFlow.DAL.Repositories
 
         public async Task Add(Dish dish)
         {
-            var category = await _context.Categories.FindAsync(dish.Category.CategoryId);
+            var category = await _context.Categories.FindAsync(dish.CategoryId);
             if (category == null)
             {
                 throw new InvalidOperationException("The specified category does not exist.");
             }
 
-            _context.Dishes.Add(dish);
+            _context.Dishes.AddAsync(dish);
             await _context.SaveChangesAsync();
         }
 

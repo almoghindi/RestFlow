@@ -1,0 +1,3146 @@
+Now listening on: https://localhost:7214
+Now listening on: http://localhost:5076
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\almog\source\repos\RestFlow\RestFlow.API
+Failed executing DbCommand (48ms) [Parameters=[@p0='?', @p1='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Restaurants" ("Name", "Password")
+VALUES (@p0, @p1)
+RETURNING "Id";
+An exception occurred in the database while saving changes for context type 'RestFlow.DAL.Data.DataDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "IX_Restaurants_Name"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "IX_Restaurants_Name"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Restaurants
+    ConstraintName: IX_Restaurants_Name
+    File: nbtinsert.c
+    Line: 673
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Error creating restaurant with Name: string
+An unhandled exception has occurred while executing the request.
+Fetched restaurant with ID: 1
+Now listening on: https://localhost:7214
+Now listening on: http://localhost:5076
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\almog\source\repos\RestFlow\RestFlow.API
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Attempting to fetch all Waiters
+Fetching all Waiters
+Attempting to retrieve all ingredients
+Getting all ingredients
+Fetching all Tables
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Now listening on: https://localhost:7214
+Now listening on: http://localhost:5076
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\almog\source\repos\RestFlow\RestFlow.API
+Now listening on: https://localhost:7214
+Now listening on: http://localhost:5076
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\almog\source\repos\RestFlow\RestFlow.API
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all Tables
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Adding Table : 1
+Successfully added Table with ID: 2
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Now listening on: https://localhost:7214
+Now listening on: http://localhost:5076
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\almog\source\repos\RestFlow\RestFlow.API
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Now listening on: https://localhost:7214
+Now listening on: http://localhost:5076
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\almog\source\repos\RestFlow\RestFlow.API
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Now listening on: https://localhost:7214
+Now listening on: http://localhost:5076
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\almog\source\repos\RestFlow\RestFlow.API
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching dish with ID: 2 from BL.
+Fetching dish with ID: 2 from DAL.
+Successfully fetched dish with ID: 2.
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Now listening on: https://localhost:7214
+Now listening on: http://localhost:5076
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\almog\source\repos\RestFlow\RestFlow.API
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Attempting to log in user: string
+Login failed: invalid password
+Failed to log in user: string
+Attempting to log in user: string
+Login failed: invalid password
+Failed to log in user: string
+Attempting to log in user: string
+Login failed: invalid password
+Failed to log in user: string
+Attempting to log in user: almog
+Login failed: invalid username or restaurant ID
+Failed to log in user: almog
+Attempting to log in user: almog
+Login failed: invalid username or restaurant ID
+Failed to log in user: almog
+Attempting to log in user: almog
+Login failed: invalid username or restaurant ID
+Failed to log in user: almog
+Attempting to sign up user: almog
+Signed up succesfully
+User signed up successfully: almog
+Attempting to log in user: almog
+Logged in successfully with RestaurantId: 1
+User logged in successfully: almog
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Now listening on: https://localhost:7214
+Now listening on: http://localhost:5076
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\almog\source\repos\RestFlow\RestFlow.API
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Now listening on: https://localhost:7214
+Now listening on: http://localhost:5076
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\almog\source\repos\RestFlow\RestFlow.API
+Now listening on: https://localhost:7214
+Now listening on: http://localhost:5076
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\almog\source\repos\RestFlow\RestFlow.API
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Adding a new category from BL.
+Category added succesfully
+Category added successfully in BL.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.

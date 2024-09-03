@@ -2,18 +2,36 @@ import { configureStore } from "@reduxjs/toolkit";
 import restaurantReducer from "./slices/restaurant-slice";
 import waiterReducer from "./slices/waiter-slice";
 import managerReducer from "./slices/manager-slice";
-import {
-  loadFromLocalStorage,
-  saveToLocalStorage,
-} from "../hooks/use-local-storage";
+import { saveToLocalStorage, loadFromLocalStorage } from "../lib/local-storage";
+import { decryptData, encryptData } from "../lib/encryption";
 
-const preloadedState = {
-  restaurant: loadFromLocalStorage("restaurant") || { id: null, name: "" },
-  waiter: loadFromLocalStorage("waiter") || { id: null, name: "" },
-  manager: loadFromLocalStorage("manager") || { id: null, name: "" },
+interface PreloadedState {
+  restaurant: ReturnType<typeof restaurantReducer>;
+  waiter: ReturnType<typeof waiterReducer>;
+  manager: ReturnType<typeof managerReducer>;
+}
+
+const safeParse = (data: string): any => {
+  try {
+    return JSON.parse(data);
+  } catch (error) {
+    return { id: null, name: "" };
+  }
 };
 
-const store = configureStore({
+const preloadedState: PreloadedState = {
+  restaurant: loadFromLocalStorage("restaurant")
+    ? safeParse(decryptData(loadFromLocalStorage("restaurant") || ""))
+    : { id: null, name: "" },
+  waiter: loadFromLocalStorage("waiter")
+    ? safeParse(decryptData(loadFromLocalStorage("waiter") || ""))
+    : { id: null, name: "" },
+  manager: loadFromLocalStorage("manager")
+    ? safeParse(decryptData(loadFromLocalStorage("manager") || ""))
+    : { id: null, name: "" },
+};
+
+export const store = configureStore({
   reducer: {
     restaurant: restaurantReducer,
     waiter: waiterReducer,
@@ -24,9 +42,20 @@ const store = configureStore({
 
 store.subscribe(() => {
   const state = store.getState();
-  saveToLocalStorage("restaurant", state.restaurant);
-  saveToLocalStorage("waiter", state.waiter);
-  saveToLocalStorage("manager", state.manager);
+
+  if (state.restaurant.id !== null && state.restaurant.name !== "") {
+    saveToLocalStorage(
+      "restaurant",
+      encryptData(JSON.stringify(state.restaurant))
+    );
+  }
+  if (state.waiter.id !== null && state.waiter.name !== "") {
+    saveToLocalStorage("waiter", encryptData(JSON.stringify(state.waiter)));
+  }
+  if (state.manager.id !== null && state.manager.name !== "") {
+    saveToLocalStorage("manager", encryptData(JSON.stringify(state.manager)));
+  }
 });
 
-export default store;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

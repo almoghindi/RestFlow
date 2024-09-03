@@ -23,7 +23,7 @@ namespace RestFlow.API.DTO
         public bool IsAvailable { get; set; }
 
         [StringLength(500)]
-        public string Description { get; set; }
+        public string ImageUrl { get; set; }
 
         public List<int> IngredientsId { get; set; } = new List<int>();
     }

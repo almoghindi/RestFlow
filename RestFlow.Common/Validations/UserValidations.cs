@@ -16,7 +16,7 @@ namespace RestFlow.Common.Validations
 
         public static bool IsValidPassword(string password)
         {
-            return password.Length >= 8 && Regex.IsMatch(password, @"\d");
+            return Regex.IsMatch(password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$");
         }
     }
 }

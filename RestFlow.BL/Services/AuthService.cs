@@ -21,7 +21,7 @@ namespace RestFlow.BL.Services
         public async Task<bool> Signup(string userName, string password, int restaurantId)
         {
             try
-            {
+           {
                 _logger.LogInformation("Attempting to sign up user: {UserName}", userName);
 
                 if (!UserValidations.IsValidUserName(userName))

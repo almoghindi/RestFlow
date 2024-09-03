@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using RestFlow.BL.Factory;
+using RestFlow.BL.Observer;
 using RestFlow.DAL.Entities;
 using RestFlow.DAL.Repositories;
 using System.Collections.Concurrent;
@@ -7,8 +8,9 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace RestFlow.BL.Services
 {
-    public class OrderService : IOrderService
+    public class OrderService : IOrderService, IOrderSubject
     {
+        private readonly List<IOrderObserver> _observers;
         private readonly IOrderRepository _orderRepository;
         private readonly IWaiterService _waiterService;
         private readonly ITableService _tableService;
@@ -26,6 +28,25 @@ namespace RestFlow.BL.Services
             _modelFactory = modelFactory;
             _logger = logger;
             _ordersQueue = new Queue<Order>();
+            _observers = new List<IOrderObserver>();
+        }
+
+        public void RegisterObserver(IOrderObserver observer)
+        {
+            _observers.Add(observer);
+        }
+
+        public void RemoveObserver(IOrderObserver observer)
+        {
+            _observers.Remove(observer);
+        }
+
+        public void NotifyObservers(Order order)
+        {
+            foreach (var observer in _observers)
+            {
+                observer.Update(order);
+            }
         }
 
         public async Task<Order> InitializeOrder(int waiterId, int tableId, int restaurantId)
@@ -50,6 +71,8 @@ namespace RestFlow.BL.Services
 
                 _ordersQueue.Enqueue(order);
                 _logger.LogInformation($"Order {order.OrderId} added to the queue.");
+
+                NotifyObservers(order);
 
                 return await _orderRepository.InitializeOrder(order);
             }
@@ -102,6 +125,8 @@ namespace RestFlow.BL.Services
                 }
 
                 await _orderRepository.AddDishToOrder(orderId, dish);
+
+                NotifyObservers(await GetOrderById(orderId));
             }
             catch (Exception ex)
             {

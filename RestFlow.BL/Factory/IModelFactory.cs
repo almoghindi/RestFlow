@@ -11,7 +11,7 @@ namespace RestFlow.BL.Factory
     {
         Category CreateCategory(string name, string description, int restaurantId);
         Dish CreateDish(string name, decimal price, int categoryId, string description, int restaurantId);
-        Ingredient CreateIngredient(string name, decimal quantity, decimal pricePerUnit, string description, int restaurantId);
+        Ingredient CreateIngredient(string name, decimal quantity, decimal pricePerUnit, string imageUrl, int restaurantId);
         Order CreateOrder(int tableId, int waiterId, int restaurantId);
         Restaurant CreateRestaurant(string name, string password);
         Table CreateTable(string tableNumber, int capacity, int restaurantIdbool,bool isAvailable = true);

@@ -34,7 +34,7 @@ namespace RestFlow.DAL.Entities
         public bool IsAvailable { get; set; }
 
         [StringLength(500)]
-        public string Description { get; set; }
+        public string ImageUrl { get; set; }
 
         public ICollection<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
 

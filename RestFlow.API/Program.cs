@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RestFlow.BL.Factory;
+using RestFlow.BL.Observer.Consumers;
 using RestFlow.BL.Services;
 using RestFlow.DAL.Data;
 using RestFlow.DAL.Entities;
 using RestFlow.DAL.Repositories;
+using RestFlow.Common.Utilities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -51,12 +53,18 @@ builder.Services.AddScoped<IRestaurantService, RestaurantService>();
 builder.Services.AddScoped<ITableService, TableService>();
 builder.Services.AddScoped<IWaiterService, WaiterService>();
 
+builder.Services.AddScoped<KitchenObserver>();
 builder.Services.AddSingleton<IModelFactory, ModelFactory>();
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddLogging();
+builder.Services.AddLogging(logging =>
+{
+    logging.ClearProviders();
+    logging.AddProvider(new CustomLoggerProvider());
+});
 
 builder.Services.AddCors(options =>
 {
@@ -68,12 +76,15 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
 using (var scope = app.Services.CreateScope())
 {
-    var ctx = scope.ServiceProvider.GetRequiredService<DataDbContext>();
-    //ctx.Database.EnsureDeleted();
-    ctx.Database.EnsureCreated();
+    var ctx1 = scope.ServiceProvider.GetRequiredService<DataDbContext>();
+    var ctx2 = scope.ServiceProvider.GetRequiredService<AuthDbContext>();
+    //ctx1.Database.EnsureDeleted();
+    ctx1.Database.EnsureCreated();
 }
+
 
 if (app.Environment.IsDevelopment())
 {

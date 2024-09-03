@@ -9,8 +9,9 @@ import { Button } from "@/components/ui/button";
 import Typography from "@/components/ui/typography";
 import useRequest from "@/hooks/use-request";
 import { LoadingSpinner } from "@/components/ui/loading-spinner";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setRestaurant } from "@/store/slices/restaurant-slice";
+import useAuthRedirect from "@/hooks/use-auth-redirect";
 
 const schema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -20,6 +21,8 @@ const schema = z.object({
 type LoginFormData = z.infer<typeof schema>;
 
 const LoginPage = () => {
+  useAuthRedirect();
+
   const dispatch = useDispatch();
   const {
     control,
@@ -53,16 +56,24 @@ const LoginPage = () => {
   return (
     <>
       {isLoading && <LoadingSpinner />}
-      <div className="flex mt-16 justify-center min-h-screen">
+      <div
+        className="flex flex-col items-center justify-center w-screen bg-cover bg-center relative"
+        style={{
+          backgroundImage: "url('/login.jpg')",
+          height: "calc(100vh - 3rem)",
+        }}
+      >
+        <div className="absolute inset-0 bg-black" style={{ opacity: 0.8 }} />
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="p-8 rounded-lg shadow-md"
+          className="relative p-8 rounded-lg shadow-md"
+          style={{ maxWidth: "500px" }}
         >
-          <Typography className="max-w-2xl m-8" variant="h1">
+          <Typography className="mb-8 text-center" variant="h1">
             Restaurant Login
           </Typography>
           <div className="mb-4">
-            <label htmlFor="username" className="block text-sm font-medium">
+            <label htmlFor="name" className="block text-sm font-medium">
               Restaurant Name:
             </label>
             <Controller
@@ -97,8 +108,12 @@ const LoginPage = () => {
                 {error.message}
               </div>
             ))}
-
-          <Button type="submit" variant="ghost" size="lg" className="w-full">
+          <Button
+            type="submit"
+            variant="ghost"
+            size="lg"
+            className="w-full mt-2"
+          >
             Login
           </Button>
         </form>

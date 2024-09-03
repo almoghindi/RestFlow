@@ -96,7 +96,7 @@ namespace RestFlow.BL.Services
             }
         }
 
-        public async Task Add(string name, decimal price,int categoryId, bool isAvailable, List<int> ingredients, string description, int restaurantId)
+        public async Task Add(string name, decimal price,int categoryId, bool isAvailable, List<int> ingredients, string imageUrl, int restaurantId)
         {
             try
             {
@@ -108,8 +108,7 @@ namespace RestFlow.BL.Services
                     throw new Exception();
                 }
 
-                Dish dish = _modelFactory.CreateDish(name, price, categoryId, description, restaurantId);
-                dish.Category = category;
+                Dish dish = _modelFactory.CreateDish(name, price, categoryId, imageUrl, restaurantId);
                 if (dish == null)
                 {
                     _logger.LogWarning("Dish data is null.");

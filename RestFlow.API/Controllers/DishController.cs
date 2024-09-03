@@ -56,8 +56,8 @@ namespace RestFlow.API.Controllers
                 return BadRequest("Dish data is null.");
             }
 
-            await _dishService.Add(dish.Name, dish.Price, dish.CategoryId, dish.IsAvailable, dish.IngredientsId, dish.Description, dish.RestaurantId);
-            return Ok(nameof(GetDishById));
+            await _dishService.Add(dish.Name, dish.Price, dish.CategoryId, dish.IsAvailable, dish.IngredientsId, dish.ImageUrl, dish.RestaurantId);
+            return Ok(dish);
         }
 
         [HttpPut("{id}")]
