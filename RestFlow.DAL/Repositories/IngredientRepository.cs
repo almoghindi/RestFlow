@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using RestFlow.Common.DataStructures;
 using RestFlow.DAL.Data;
 using RestFlow.DAL.Entities;
 
@@ -9,12 +10,13 @@ namespace RestFlow.DAL.Repositories
     {
         private readonly DataDbContext _context;
         private readonly ILogger<IngredientRepository> _logger;
-
-
+        private readonly CustomTree<Ingredient> _ingredientTree;
         public IngredientRepository(DataDbContext context, ILogger<IngredientRepository> logger)
         {
             _context = context; 
             _logger = logger;
+            _ingredientTree = new CustomTree<Ingredient>(new Ingredient() { Name = "Root" });
+
         }
 
         public async Task<Ingredient> GetById(int id)
