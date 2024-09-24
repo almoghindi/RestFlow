@@ -67,7 +67,7 @@ const Modal = React.forwardRef<React.ElementRef<typeof Dialog>, ModalProps>(
           <DialogOverlay className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
           <DialogContent className={cn(modalVariants({ size, variant }))}>
             <div className="flex flex-col space-y-1.5 text-center sm:text-left">
-              <DialogTitle className="text-lg font-semibold leading-none tracking-tight">
+              <DialogTitle className="text-lg font-semibold leading-none tracking-tight text-black">
                 {title}
               </DialogTitle>
             </div>

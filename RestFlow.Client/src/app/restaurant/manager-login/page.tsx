@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -27,9 +27,12 @@ const ManagerLoginPage = () => {
   const router = useRouter();
 
   const manager = useSelector((state: RootState) => state.manager);
-  if (manager.id) {
-    router.push("/restaurant/manager");
-  }
+
+  useEffect(() => {
+    if (manager.id) {
+      router.push("/restaurant/manager");
+    }
+  }, [manager.id, router]);
 
   const user = useSelector((state: RootState) => state.restaurant);
 

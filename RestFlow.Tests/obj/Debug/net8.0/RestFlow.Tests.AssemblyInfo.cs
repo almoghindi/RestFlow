@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RestFlow.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+38010f8833875fef6a351600b7a8fc1da0b5ff9d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+00dcea1d23917dee30119961d2364c5a9551d3cb")]
 [assembly: System.Reflection.AssemblyProductAttribute("RestFlow.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RestFlow.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

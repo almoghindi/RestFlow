@@ -60,7 +60,7 @@ namespace RestFlow.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> Update(int id, Ingredient ingredient)
+        public async Task<ActionResult> Update(int id, IngredientDTO ingredient)
         {
             if (id == 0)
             {
@@ -70,12 +70,8 @@ namespace RestFlow.API.Controllers
             {
                 return BadRequest("Ingredient is null");
             }
-            if (id != ingredient.IngredientId)
-            {
-                return BadRequest();
-            }
 
-            await _ingredientService.Update(ingredient);
+            await _ingredientService.Update(id, ingredient.Name, ingredient.Quantity, ingredient.PricePerUnit, ingredient.Description, ingredient.RestaurantId);
             return NoContent();
         }
 

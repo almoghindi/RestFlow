@@ -56,12 +56,12 @@ namespace RestFlow.API.Controllers
                 return BadRequest("Dish data is null.");
             }
 
-            await _dishService.Add(dish.Name, dish.Price, dish.CategoryId, dish.IsAvailable, dish.IngredientsId, dish.ImageUrl, dish.RestaurantId);
+            await _dishService.Add(dish.Name, dish.Price, dish.CategoryId, dish.IsAvailable, dish.ingredientIds, dish.ImageUrl, dish.RestaurantId);
             return Ok(dish);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateDish(int id, Dish dish)
+        public async Task<IActionResult> UpdateDish(int id, DishDto dish)
         {
             if (id == 0)
             {
@@ -72,13 +72,7 @@ namespace RestFlow.API.Controllers
                 return BadRequest("Dish ID mismatch.");
             }
 
-            var existingDish = await _dishService.GetById(id);
-            if (existingDish == null)
-            {
-                return NotFound("Dish not found.");
-            }
-
-            await _dishService.Update(dish);
+            await _dishService.Update(id, dish.Name, dish.Price, dish.CategoryId, dish.IsAvailable, dish.ingredientIds, dish.ImageUrl, dish.RestaurantId);
             return NoContent();
         }
 

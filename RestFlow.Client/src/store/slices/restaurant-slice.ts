@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface RestaurantState {
+export interface RestaurantState {
   id: number | null;
   name: string;
 }

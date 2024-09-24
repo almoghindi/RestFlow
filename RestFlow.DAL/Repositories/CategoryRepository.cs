@@ -44,11 +44,11 @@ namespace RestFlow.DAL.Repositories
 
 
 
-        public async Task Update(Category category)
+        public async Task Update(int id, string name, string description, int restaurantId)
         {
-            var categoryToUpdate = await _context.Categories.SingleAsync(c => c.CategoryId == category.CategoryId);
-            categoryToUpdate.Name = category.Name;
-            categoryToUpdate.Description = category.Description;
+            var categoryToUpdate = await _context.Categories.SingleAsync(c => c.CategoryId == id && c.RestaurantId == restaurantId);
+            categoryToUpdate.Name = name;
+            categoryToUpdate.Description = description;
             _context.SaveChanges();
             _logger.LogInformation("Category updated succesfully");
         }

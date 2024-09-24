@@ -2,7 +2,12 @@ import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/class-names";
-import { Tabs as RadixTabs, TabsContent } from "@radix-ui/react-tabs";
+import {
+  Tabs as RadixTabs,
+  TabsContent,
+  TabsTrigger,
+  TabsList,
+} from "@radix-ui/react-tabs";
 
 const tabsVariants = cva("flex w-full", {
   variants: {
@@ -38,16 +43,44 @@ const Tabs = React.forwardRef<React.ElementRef<typeof RadixTabs>, TabsProps>(
 
 Tabs.displayName = "Tabs";
 
-export interface TabContentProps
-  extends React.ComponentPropsWithoutRef<typeof TabsContent> {}
-
-const TabContent = React.forwardRef<
-  React.ElementRef<typeof TabsContent>,
-  TabContentProps
->((props, ref) => {
-  return <TabsContent ref={ref} {...props} />;
+export const CustomTabsList = React.forwardRef<
+  React.ElementRef<typeof TabsList>,
+  React.ComponentPropsWithoutRef<typeof TabsList>
+>(({ className, ...props }, ref) => {
+  return (
+    <TabsList ref={ref} className={cn("flex flex-col", className)} {...props} />
+  );
 });
+CustomTabsList.displayName = "CustomTabsList";
 
-TabContent.displayName = "TabContent";
+export const CustomTabsTrigger = React.forwardRef<
+  React.ElementRef<typeof TabsTrigger>,
+  React.ComponentPropsWithoutRef<typeof TabsTrigger>
+>(({ className, ...props }, ref) => {
+  return (
+    <TabsTrigger
+      ref={ref}
+      className={cn(
+        "py-4 hover:bg-gray-700 rounded text-2xl font-bold",
+        className
+      )}
+      {...props}
+    />
+  );
+});
+CustomTabsTrigger.displayName = "CustomTabsTrigger";
 
-export { Tabs, TabContent };
+export const CustomTabContent = React.forwardRef<
+  React.ElementRef<typeof TabsContent>,
+  React.ComponentPropsWithoutRef<typeof TabsContent>
+>(({ className, ...props }, ref) => {
+  return <TabsContent ref={ref} className={cn("p-4", className)} {...props} />;
+});
+CustomTabContent.displayName = "CustomTabContent";
+
+export {
+  Tabs,
+  CustomTabContent as TabContent,
+  CustomTabsList as TabsList,
+  CustomTabsTrigger as TabsTrigger,
+};

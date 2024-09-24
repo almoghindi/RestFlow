@@ -51,7 +51,11 @@ const RestaurantPage = () => {
         <Typography variant="h1">Hey, {restaurantName}</Typography>
 
         <div className="grid grid-cols-2 sm:grid-cols-2 gap-8 mt-12 w-full max-w-lg">
-          <Button variant="ghost" className="p-8">
+          <Button
+            variant="ghost"
+            className="p-8"
+            onClick={() => router.push("/restaurant/menu")}
+          >
             <Restaurant03Icon className="text-5xl m-1" />
             <span className="text-xl">Menu</span>
           </Button>

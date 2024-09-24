@@ -39,8 +39,18 @@ namespace RestFlow.DAL.Repositories
         public async Task Update(Ingredient ingredient)
         {
             _logger.LogInformation($"Updating ingredient with ID {ingredient.IngredientId}");
-            _context.Set<Ingredient>().Update(ingredient);
-            await _context.SaveChangesAsync();
+            var ingredientToUpdate = await _context.Ingredients.SingleAsync(i => i.IngredientId == ingredient.IngredientId && i.RestaurantId == ingredient.RestaurantId);
+
+            ingredientToUpdate.Name = ingredient.Name;
+            ingredientToUpdate.Quantity = ingredient.Quantity;
+            ingredientToUpdate.PricePerUnit = ingredient.PricePerUnit;
+            ingredientToUpdate.Description = ingredient.Description;
+            ingredientToUpdate.IsAvailable = ingredient.IsAvailable;
+
+
+            _context.SaveChanges();
+            _logger.LogInformation("Ingredient updated successfully in DAL.");
+
         }
 
         public async Task Delete(int id)

@@ -35,21 +35,25 @@ namespace RestFlow.DAL.Repositories
 
         public async Task Add(Dish dish)
         {
-            var category = await _context.Categories.FindAsync(dish.CategoryId);
-            if (category == null)
-            {
-                throw new InvalidOperationException("The specified category does not exist.");
-            }
-
+            _logger.LogInformation("Adding dish with ID: {DishId} in DAL.", dish.DishId);
             _context.Dishes.AddAsync(dish);
             await _context.SaveChangesAsync();
+            _logger.LogInformation("Dish added successfully in DAL.");
+
         }
 
         public async Task Update(Dish dish)
         {
             _logger.LogInformation("Updating dish with ID: {DishId} in DAL.", dish.DishId);
-            _context.Dishes.Update(dish);
-            await _context.SaveChangesAsync();
+            var dishToUpdate = await _context.Dishes.SingleAsync(d => d.DishId == dish.DishId && d.RestaurantId == dish.RestaurantId);
+
+            dishToUpdate.Name = dish.Name;
+            dishToUpdate.Price = dish.Price;
+            dishToUpdate.CategoryId = dish.CategoryId;
+            dishToUpdate.IsAvailable = dish.IsAvailable;
+            dishToUpdate.ImageUrl = dish.ImageUrl;
+
+            _context.SaveChanges();
             _logger.LogInformation("Dish updated successfully in DAL.");
         }
 

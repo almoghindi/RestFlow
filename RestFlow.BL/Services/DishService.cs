@@ -12,16 +12,18 @@ namespace RestFlow.BL.Services
         private readonly ILogger<DishService> _logger;
         private readonly IModelFactory _modelFactory;
         private readonly ICategoryService _categoryService;
+        private readonly IIngredientService _ingredientService;
 
         private readonly Dictionary<int, List<Dish>> _categoryDishIndex = new Dictionary<int, List<Dish>>();
         private bool _isIndexInitialized = false;
 
-        public DishService(IDishRepository dishRepository, ILogger<DishService> logger, IModelFactory modelFactory, ICategoryService categoryService)
+        public DishService(IDishRepository dishRepository, ILogger<DishService> logger, IModelFactory modelFactory, ICategoryService categoryService, IIngredientService ingredientService)
         {
             _dishRepository = dishRepository;
             _logger = logger;
             _modelFactory = modelFactory;
             _categoryService = categoryService;
+            _ingredientService = ingredientService;
         }
 
         public async Task InitializeIndex(int restaurantId)
@@ -109,6 +111,21 @@ namespace RestFlow.BL.Services
                 }
 
                 Dish dish = _modelFactory.CreateDish(name, price, categoryId, imageUrl, restaurantId);
+
+                List<Ingredient> ings = new List<Ingredient>();
+                for (int i = 0; i < ingredients.Count; i++)
+                {
+                    var ing = await _ingredientService.GetById(ingredients[i]);
+                    if (ing == null)
+                    {
+                        _logger.LogError("Error adding dish. no ingredient found!");
+                        throw new Exception();
+                    }
+                    ings.Add(ing);
+                }
+
+                dish.Ingredients = ings;
+
                 if (dish == null)
                 {
                     _logger.LogWarning("Dish data is null.");
@@ -126,29 +143,32 @@ namespace RestFlow.BL.Services
             }
         }
 
-        public async Task Update(Dish dish)
+        public async Task Update(int id, string name, decimal price, int categoryId, bool isAvailable, List<int> ingredients, string imageUrl, int restaurantId)
         {
             try
             {
-                _logger.LogInformation("Updating dish with ID: {DishId} in BL.", dish.DishId);
-                if (dish == null)
+                _logger.LogInformation("Updating dish with ID: {DishId} in BL.", id);
+                if (name == null || price <= 0 || categoryId == 0 || imageUrl == null || restaurantId == 0)
                 {
                     _logger.LogWarning("Dish data is null.");
-                    throw new ArgumentNullException(nameof(dish), "Dish cannot be null.");
+                    throw new ArgumentNullException(name, "Dish cannot be null.");
                 }
-                var existingDish = await _dishRepository.GetById(dish.DishId);
+                var existingDish = await _dishRepository.GetById(id);
                 if (existingDish == null)
                 {
-                    _logger.LogWarning("Dish with ID: {DishId} not found for update.", dish.DishId);
+                    _logger.LogWarning("Dish with ID: {DishId} not found for update.", id);
                     throw new KeyNotFoundException("Dish not found.");
                 }
+
+               
+                Dish dish = new() { DishId = id, Name = name, Price = price, CategoryId = categoryId, IsAvailable = isAvailable ,ImageUrl = imageUrl, RestaurantId = restaurantId  };
                 await _dishRepository.Update(dish);
-                UpdateIndex(new[] { dish });
+                UpdateIndex([dish]);
                 _logger.LogInformation("Dish updated successfully in BL.");
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error updating dish with ID: {DishId}.", dish.DishId);
+                _logger.LogError(ex, "Error updating dish with ID: {DishId}.", id);
                 throw;
             }
         }
@@ -165,10 +185,10 @@ namespace RestFlow.BL.Services
                     throw new KeyNotFoundException("Dish not found.");
                 }
                 await _dishRepository.Delete(dishId);
-                if (_categoryDishIndex.ContainsKey(dish.CategoryId))
+                if (_categoryDishIndex.TryGetValue(dish.CategoryId, out List<Dish>? value))
                 {
-                    _categoryDishIndex[dish.CategoryId].Remove(dish);
-                    if (_categoryDishIndex[dish.CategoryId].Count == 0)
+                    value.Remove(dish);
+                    if (value.Count == 0)
                     {
                         _categoryDishIndex.Remove(dish.CategoryId);
                     }
@@ -193,7 +213,7 @@ namespace RestFlow.BL.Services
                     return dishes;
                 }
                 _logger.LogWarning("No dishes found for category ID: {CategoryId}.", categoryId);
-                return Enumerable.Empty<Dish>();
+                return [];
             }
             catch (Exception ex)
             {

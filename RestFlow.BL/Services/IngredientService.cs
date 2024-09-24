@@ -71,16 +71,32 @@ namespace RestFlow.BL.Services
             }
         }
 
-        public async Task Update(Ingredient ingredient)
+        public async Task Update(int id, string name, decimal quantity, decimal pricePerUnit, string description, int restaurantId)
         {
             try
             {
-                _logger.LogInformation($"Attempting to update ingredient with ID {ingredient.IngredientId}");
+                _logger.LogInformation($"Attempting to update ingredient with ID {id}");
+                if (id == 0 || name == null || quantity < 0 || pricePerUnit < 0 || description == null || restaurantId == 0)
+                {
+                    _logger.LogWarning("Ingredient data is null.");
+                    throw new ArgumentNullException(name, "Ingredient cannot be null.");
+                }
+
+                var existingIngredient = await _ingredientRepository.GetById(id);
+                if (existingIngredient == null)
+                {
+                    _logger.LogWarning("Ingredient with ID: {id} not found for update.", id);
+                    throw new KeyNotFoundException("Ingredient not found.");
+                }
+
+                Ingredient ingredient = new() { IngredientId = id, Name = name, Quantity = quantity, PricePerUnit = pricePerUnit, Description = description, IsAvailable = quantity > 0, RestaurantId = restaurantId};
                 await _ingredientRepository.Update(ingredient);
+                _logger.LogInformation("Ingredient updated successfully in BL.");
+
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Error occurred while updating ingredient with ID {ingredient.IngredientId}");
+                _logger.LogError(ex, $"Error occurred while updating ingredient with ID {id}");
                 throw;
             }
         }

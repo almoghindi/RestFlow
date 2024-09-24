@@ -25,7 +25,7 @@ namespace RestFlow.API.DTO
         [StringLength(500)]
         public string ImageUrl { get; set; }
 
-        public List<int> IngredientsId { get; set; } = new List<int>();
+        public List<int> ingredientIds { get; set; } = new List<int>();
     }
 
 }

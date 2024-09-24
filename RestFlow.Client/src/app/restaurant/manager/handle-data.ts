@@ -1,4 +1,3 @@
-// hooks/useData.ts
 import { useCallback } from "react";
 import useRequest from "@/hooks/use-request";
 import { Method } from "axios";
@@ -25,8 +24,6 @@ const useData = () => {
         url = `${url}?${queryString}`;
       }
 
-      console.log(url);
-
       try {
         const response = await sendRequest({ url, method, body });
         return response;
@@ -40,7 +37,6 @@ const useData = () => {
 
   const fetchData = useCallback(
     async (section: string, queryParams?: Record<string, any>) => {
-      console.log(section);
       return handleData(section, "GET", undefined, undefined, queryParams);
     },
     [handleData]

@@ -55,9 +55,9 @@ namespace RestFlow.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateCategory(int id, Category category)
+        public async Task<IActionResult> UpdateCategory(int id, [FromBody] CategoryDto category)
         {
-            if(id == 0)
+            if (id == 0)
             {
                 return BadRequest("Category id is 0");
             }
@@ -70,7 +70,7 @@ namespace RestFlow.API.Controllers
                 return BadRequest("Category ID mismatch.");
             }
 
-            await _categoryService.Update(category);
+            await _categoryService.Update(id, category.Name, category.Description, category.RestaurantId);
             return NoContent();
         }
 

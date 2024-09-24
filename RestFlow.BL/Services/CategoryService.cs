@@ -88,17 +88,17 @@ namespace RestFlow.BL.Services
             }
         }
 
-        public async Task Update(Category category)
+        public async Task Update(int id, string name, string description, int restaurantId)
         {
             try
             {
-                _logger.LogInformation("Updating category from BL. Category ID: {CategoryId}", category.CategoryId);
-                await _categoryRepository.Update(category);
+                _logger.LogInformation("Updating category from BL. Category ID: {CategoryId}", id);
+                await _categoryRepository.Update(id, name, description, restaurantId);
                 _logger.LogInformation("Category updated successfully in BL.");
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An error occurred while updating a category in BL. Category ID: {CategoryId}", category.CategoryId);
+                _logger.LogError(ex, "An error occurred while updating a category in BL. Category ID: {CategoryId}", id);
                 throw; 
             }
         }

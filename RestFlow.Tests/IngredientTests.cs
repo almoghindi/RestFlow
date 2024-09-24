@@ -124,9 +124,8 @@ namespace RestFlow.Tests
         public async Task Update_ShouldReturnNoContent_WhenIngredientIsUpdated()
         {
             var ingredientId = 1;
-            var ingredient = new Ingredient
+            var ingredient = new IngredientDTO
             {
-                IngredientId = ingredientId,
                 Name = "Updated Flour",
                 Quantity = 30,
                 PricePerUnit = 1.8m,
@@ -135,7 +134,7 @@ namespace RestFlow.Tests
             };
 
             _mockIngredientService
-                .Setup(service => service.Update(ingredient))
+                .Setup(service => service.Update(ingredientId, ingredient.Name, ingredient.Quantity, ingredient.PricePerUnit, ingredient.Description, ingredient.RestaurantId))
                 .Returns(Task.CompletedTask);
 
             var result = await _controller.Update(ingredientId, ingredient) as NoContentResult;

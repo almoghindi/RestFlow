@@ -16,7 +16,7 @@ export function Dropdown({ label, items, value, onChange }: DropdownProps) {
   const selectedItem = items.find((item) => item.value === value);
 
   return (
-    <div className="w-2/3 max-w-sm relative text-black">
+    <div className="relative w-full max-w-md">
       {label && (
         <label className="block text-sm font-medium text-black">{label}</label>
       )}
@@ -26,7 +26,7 @@ export function Dropdown({ label, items, value, onChange }: DropdownProps) {
         onOpenChange={setIsOpen}
       >
         <Select.Trigger
-          className="mt-1 flex w-full justify-between items-center rounded-md border border-gray-300 bg-white py-2 px-3 text-sm leading-4 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+          className="w-full h-10 flex justify-between items-center rounded-md border border-gray-300 bg-background py-2 px-3 text-sm leading-4 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
           aria-label={label}
         >
           <Select.Value className="text-black">
@@ -42,7 +42,7 @@ export function Dropdown({ label, items, value, onChange }: DropdownProps) {
         </Select.Trigger>
         <Select.Portal>
           <Select.Content
-            className="z-50 w-full overflow-hidden bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+            className="z-50 w-full overflow-hidden bg-background rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
             position="popper"
             sideOffset={5}
             align="start"
@@ -54,7 +54,7 @@ export function Dropdown({ label, items, value, onChange }: DropdownProps) {
                   key={item.value}
                   value={item.value}
                   className={cn(
-                    "relative flex items-center py-3 pl-3 pr-36 text-sm text-gray-900 rounded-md cursor-default select-none",
+                    "relative flex items-center py-3 pl-3 pr-36 text-sm text-white rounded-md cursor-pointer select-none",
                     "radix-disabled:opacity-50 radix-highlighted:bg-indigo-600 radix-highlighted:text-white"
                   )}
                 >

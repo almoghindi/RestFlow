@@ -46,10 +46,10 @@ namespace RestFlow.Tests
 
             _mockDishService.Setup(service => service.GetById(dishDto.DishId))
                 .ReturnsAsync(dish);
-            _mockDishService.Setup(service => service.Update(It.IsAny<Dish>()))
+            _mockDishService.Setup(service => service.Update(dishDto.DishId,dishDto.Name, dishDto.Price, dishDto.CategoryId, dishDto.IsAvailable, dishDto.ingredientIds, dishDto.ImageUrl,dishDto.RestaurantId))
                 .Returns(Task.CompletedTask);
 
-            var result = await _controller.UpdateDish(dishDto.DishId, dish) as NoContentResult;
+            var result = await _controller.UpdateDish(dishDto.DishId, dishDto) as NoContentResult;
 
             result.Should().NotBeNull();
             result.StatusCode.Should().Be(204);
@@ -59,7 +59,7 @@ namespace RestFlow.Tests
         public async Task UpdateDish_ShouldReturnBadRequest_WhenIdMismatch()
         {
 
-            var dish = new Dish
+            var dish = new DishDto
             {
                 DishId = 2,
                 Name = "Updated Dish",
@@ -86,7 +86,7 @@ namespace RestFlow.Tests
                 Price = 15.0m,
                 CategoryId = 1,
                 IsAvailable = true,
-                IngredientsId = new List<int> { 1 },
+                ingredientIds = new List<int> { 1 },
                 ImageUrl = "New Description",
                 RestaurantId = 1
             };
@@ -96,7 +96,7 @@ namespace RestFlow.Tests
                 dishDto.Price,
                 dishDto.CategoryId,
                 dishDto.IsAvailable,
-                dishDto.IngredientsId,
+                dishDto.ingredientIds,
                 dishDto.ImageUrl,
                 dishDto.RestaurantId))
                 .Returns(Task.CompletedTask);

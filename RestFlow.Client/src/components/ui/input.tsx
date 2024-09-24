@@ -36,7 +36,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const Comp = asChild ? Slot : "input";
     return (
       <Comp
-        className={cn(inputVariants({ variant, size, className }))}
+        className={cn(inputVariants({ variant, size, className }), "w-full")}
         ref={ref}
         {...props}
       />

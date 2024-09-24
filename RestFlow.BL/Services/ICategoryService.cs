@@ -8,6 +8,6 @@ namespace RestFlow.BL.Services
         Task<Category> GetById(int id);
         Task Add(string name, string description, int restaurantId);
         Task Delete(int categoryId);
-        Task Update(Category category);
+        Task Update(int id, string name, string description, int restaurantId);
     }
 }

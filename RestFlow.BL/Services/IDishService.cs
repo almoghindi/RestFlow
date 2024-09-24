@@ -12,7 +12,7 @@ namespace RestFlow.BL.Services
         Task<IEnumerable<Dish>> GetAllByRestaurantId(int restaurantId);
         Task<Dish> GetById(int dishId);
         Task Add(string name, decimal price, int categoryId, bool isAvailable, List<int> ingredients, string description, int restaurantId);
-        Task Update(Dish dish);
+        Task Update(int id, string name, decimal price, int categoryId, bool isAvailable, List<int> ingredients, string imageUrl, int restaurantId);
         Task Delete(int dishId);
         IEnumerable<Dish> GetDishesByCategory(int categoryId);
 

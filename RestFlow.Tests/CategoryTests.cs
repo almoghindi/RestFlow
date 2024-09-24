@@ -76,7 +76,7 @@ namespace RestFlow.Tests
         [Fact]
         public async Task UpdateCategory_ShouldReturnNoContent_WhenCategoryUpdatedSuccessfully()
         {
-            var category = new Category { CategoryId = 1, Name = "Updated Category", Description = "Updated Description", RestaurantId = 1 };
+            var category = new CategoryDto { CategoryId = 1, Name = "Updated Category", Description = "Updated Description", RestaurantId = 1 };
 
             _mockCategoryService.Setup(service => service.GetAllByRestaurantId(1))
     .ReturnsAsync(new List<Category>
@@ -94,7 +94,7 @@ namespace RestFlow.Tests
         [Fact]
         public async Task UpdateCategory_ShouldReturnBadRequest_WhenIdMismatch()
         {
-            var category = new Category { CategoryId = 2, Name = "Updated Category", Description = "Updated Description", RestaurantId = 1 };
+            var category = new CategoryDto { CategoryId = 2, Name = "Updated Category", Description = "Updated Description", RestaurantId = 1 };
 
             var result = await _controller.UpdateCategory(1, category) as BadRequestObjectResult;
 

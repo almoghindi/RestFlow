@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace RestFlow.DAL.Entities
 {
@@ -31,6 +32,7 @@ namespace RestFlow.DAL.Entities
 
         public bool IsAvailable { get; set; }
 
+        [JsonIgnore]
         public ICollection<Dish> Dishes { get; set; } = new List<Dish>();
 
         public void AddQuantity(decimal quantityToAdd)

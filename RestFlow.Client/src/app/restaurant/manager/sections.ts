@@ -23,7 +23,7 @@ export const sectionsConfig: SectionConfig[] = [
       { name: "name", label: "Name", required: true },
       { name: "price", label: "Price", required: true },
       { name: "CategoryId", label: "Category", required: true },
-      { name: "Ingredients", label: "Ingredients", required: true },
+      { name: "IngredientIds", label: "Ingredients" },
       { name: "imageUrl", label: "Image URL" },
       { name: "isAvailable", label: "Is Available" },
     ],
@@ -55,3 +55,26 @@ export const sectionsConfig: SectionConfig[] = [
     ],
   },
 ];
+
+export type SectionNames =
+  | "Categories"
+  | "Dishes"
+  | "Ingredients"
+  | "Waiters"
+  | "Tables";
+
+export const sectionIdFields: Record<string, string> = {
+  Categories: "categoryId",
+  Dishes: "dishId",
+  Ingredients: "ingredientId",
+  Waiters: "waiterId",
+  Tables: "tableId",
+};
+
+export const sectionToLabel: Record<SectionNames, string> = {
+  Categories: "category",
+  Dishes: "dish",
+  Ingredients: "ingredient",
+  Waiters: "waiter",
+  Tables: "table",
+};

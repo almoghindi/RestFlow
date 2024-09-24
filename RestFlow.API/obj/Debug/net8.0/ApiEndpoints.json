@@ -104,7 +104,7 @@
       },
       {
         "Name": "category",
-        "Type": "RestFlow.DAL.Entities.Category",
+        "Type": "RestFlow.API.DTO.CategoryDto",
         "IsRequired": true
       }
     ],
@@ -173,7 +173,7 @@
       },
       {
         "Name": "dish",
-        "Type": "RestFlow.DAL.Entities.Dish",
+        "Type": "RestFlow.API.DTO.DishDto",
         "IsRequired": true
       }
     ],
@@ -278,7 +278,7 @@
       },
       {
         "Name": "ingredient",
-        "Type": "RestFlow.DAL.Entities.Ingredient",
+        "Type": "RestFlow.API.DTO.IngredientDTO",
         "IsRequired": true
       }
     ],

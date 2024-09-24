@@ -8,6 +8,6 @@ namespace RestFlow.DAL.Repositories
         Task<Category> GetById(int id);
         Task Add(Category category);
         Task Delete(int categoryId);
-        Task Update(Category category);
+        Task Update(int id, string name, string description, int restaurantId);
     }
 }
