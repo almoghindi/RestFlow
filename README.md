@@ -95,6 +95,9 @@ With **RestFlow**, you get everything you need to manage your restaurant efficie
     Allows incompatible interfaces to work together.  
     Implemented to integrate third-party services or systems without modifying existing code.
 
+11. **Proxy Pattern**  
+    Acts as an intermediary for requests from clients seeking resources from the backend services.  
+    Implemented using Nginx as a reverse proxy to improve load balancing, enhance security, and manage SSL termination.
 
 ## Architectures Used
 
@@ -150,6 +153,9 @@ Caching mechanisms were employed using Redis to improve the performance of the a
 
 ### Main Menu
 ![Screenshot 2024-09-24 190539](https://github.com/user-attachments/assets/4c289090-6f1a-440a-84ae-fd5549d83a12)
+
+### Menu
+![Screenshot 2024-09-24 190523](https://github.com/user-attachments/assets/0019d6b7-fc25-456e-8437-4da9e76541e6)
 
 ### Managment
 ![Screenshot 2024-09-24 191538](https://github.com/user-attachments/assets/da4b3d59-12ee-48fc-9c28-c37d204ee9f5)
