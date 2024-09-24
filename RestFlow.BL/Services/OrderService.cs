@@ -1,10 +1,12 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Logging;
 using RestFlow.BL.Factory;
 using RestFlow.BL.Observer;
+using RestFlow.Common.DataStructures;
 using RestFlow.DAL.Entities;
 using RestFlow.DAL.Repositories;
 using System.Collections.Concurrent;
-using System.Reflection.Metadata.Ecma335;
+using System.Text.Json;
 
 namespace RestFlow.BL.Services
 {
@@ -17,9 +19,19 @@ namespace RestFlow.BL.Services
         private readonly IDishService _dishService;
         private readonly IModelFactory _modelFactory;
         private readonly ILogger<OrderService> _logger;
-        private readonly Queue<Order> _ordersQueue;
+        private readonly CustomQueue<Order> _ordersQueue;
+        private readonly IDistributedCache _cache;
+        private readonly string _queueKey = "ordersQueue";
+        private readonly string _dishCachePrefix = "dish:";
 
-        public OrderService(IOrderRepository orderRepository, IWaiterService waiterService, ITableService tableService, IDishService dishService, IModelFactory modelFactory, ILogger<OrderService> logger)
+        public OrderService(
+            IOrderRepository orderRepository,
+            IWaiterService waiterService,
+            ITableService tableService,
+            IDishService dishService,
+            IModelFactory modelFactory,
+            ILogger<OrderService> logger,
+            IDistributedCache cache)
         {
             _orderRepository = orderRepository;
             _waiterService = waiterService;
@@ -27,8 +39,9 @@ namespace RestFlow.BL.Services
             _dishService = dishService;
             _modelFactory = modelFactory;
             _logger = logger;
-            _ordersQueue = new Queue<Order>();
+            _ordersQueue = new CustomQueue<Order>();
             _observers = new List<IOrderObserver>();
+            _cache = cache;
         }
 
         public void RegisterObserver(IOrderObserver observer)
@@ -62,14 +75,21 @@ namespace RestFlow.BL.Services
                 }
 
                 var order = _modelFactory.CreateOrder(tableId, waiterId, restaurantId);
-                if(order == null)
+                if (order == null)
                 {
                     throw new ArgumentException("Invalid order");
                 }
                 order.Table = table;
                 order.Waiter = waiter;
 
+                var cachedDishes = await LoadDishesFromCache(order.OrderId);
+                if (cachedDishes != null)
+                {
+                    order.Dishes = cachedDishes.ToList();
+                }
+
                 _ordersQueue.Enqueue(order);
+                await AddOrderToQueueAsync(order);
                 _logger.LogInformation($"Order {order.OrderId} added to the queue.");
 
                 NotifyObservers(order);
@@ -93,12 +113,35 @@ namespace RestFlow.BL.Services
                 {
                     _ordersQueue.Enqueue(order);
                     _logger.LogInformation($"Order {order.OrderId} loaded into the queue.");
+
+                    var cachedDishes = await LoadDishesFromCache(order.OrderId);
+                    if (cachedDishes != null)
+                    {
+                        order.Dishes = cachedDishes.ToList();
+                    }
                 }
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error loading orders into the queue.");
             }
+        }
+
+        private async Task AddOrderToQueueAsync(Order order)
+        {
+            var ordersQueueJson = await _cache.GetStringAsync(_queueKey);
+            var ordersQueue = string.IsNullOrEmpty(ordersQueueJson) ? new ConcurrentQueue<Order>() : JsonSerializer.Deserialize<ConcurrentQueue<Order>>(ordersQueueJson);
+
+            ordersQueue.Enqueue(order);
+
+            var updatedOrdersQueueJson = JsonSerializer.Serialize(ordersQueue);
+            await _cache.SetStringAsync(_queueKey, updatedOrdersQueueJson);
+        }
+
+        private async Task<ConcurrentQueue<Order>> GetOrdersQueueAsync()
+        {
+            var ordersQueueJson = await _cache.GetStringAsync(_queueKey);
+            return string.IsNullOrEmpty(ordersQueueJson) ? new ConcurrentQueue<Order>() : JsonSerializer.Deserialize<ConcurrentQueue<Order>>(ordersQueueJson);
         }
 
         public async Task<Order> GetOrderById(int orderId)
@@ -126,6 +169,8 @@ namespace RestFlow.BL.Services
 
                 await _orderRepository.AddDishToOrder(orderId, dish);
 
+                await CacheDishForOrder(orderId, dish);
+
                 NotifyObservers(await GetOrderById(orderId));
             }
             catch (Exception ex)
@@ -140,6 +185,9 @@ namespace RestFlow.BL.Services
             try
             {
                 await _orderRepository.RemoveDishFromOrder(orderId, dishId);
+
+                await RemoveDishFromCache(orderId, dishId);
+
                 _logger.LogInformation($"Dish {dishId} removed from order {orderId}.");
             }
             catch (Exception ex)
@@ -166,7 +214,11 @@ namespace RestFlow.BL.Services
         {
             try
             {
-                return await _orderRepository.CloseAndPayOrder(orderId);
+                var closedOrder = await _orderRepository.CloseAndPayOrder(orderId);
+
+                await ClearDishesFromCache(orderId);
+
+                return closedOrder;
             }
             catch (Exception ex)
             {
@@ -179,7 +231,7 @@ namespace RestFlow.BL.Services
         {
             try
             {
-                if(_ordersQueue.Count == 0)
+                if (_ordersQueue.Count == 0)
                 {
                     await LoadQueue(restaurantId);
                 }
@@ -190,6 +242,44 @@ namespace RestFlow.BL.Services
                 _logger.LogError(ex, "Error retrieving orders queue");
                 throw;
             }
+        }
+
+        private async Task CacheDishForOrder(int orderId, Dish dish)
+        {
+            var dishCacheKey = $"{_dishCachePrefix}{orderId}";
+            var cachedDishes = await LoadDishesFromCache(orderId);
+            var dishesList = cachedDishes?.ToList() ?? new List<Dish>();
+
+            dishesList.Add(dish);
+
+            var serializedDishes = JsonSerializer.Serialize(dishesList);
+            await _cache.SetStringAsync(dishCacheKey, serializedDishes);
+        }
+
+        private async Task<IEnumerable<Dish>> LoadDishesFromCache(int orderId)
+        {
+            var dishCacheKey = $"{_dishCachePrefix}{orderId}";
+            var dishesJson = await _cache.GetStringAsync(dishCacheKey);
+            return string.IsNullOrEmpty(dishesJson) ? null : JsonSerializer.Deserialize<IEnumerable<Dish>>(dishesJson);
+        }
+
+        private async Task RemoveDishFromCache(int orderId, int dishId)
+        {
+            var cachedDishes = await LoadDishesFromCache(orderId);
+            if (cachedDishes != null)
+            {
+                var updatedDishes = cachedDishes.Where(d => d.DishId != dishId).ToList();
+                var dishCacheKey = $"{_dishCachePrefix}{orderId}";
+
+                var serializedDishes = JsonSerializer.Serialize(updatedDishes);
+                await _cache.SetStringAsync(dishCacheKey, serializedDishes);
+            }
+        }
+
+        private async Task ClearDishesFromCache(int orderId)
+        {
+            var dishCacheKey = $"{_dishCachePrefix}{orderId}";
+            await _cache.RemoveAsync(dishCacheKey);
         }
     }
 }

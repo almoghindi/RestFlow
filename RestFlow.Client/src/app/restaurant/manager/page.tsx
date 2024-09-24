@@ -73,8 +73,7 @@ const ManagerPage: React.FC = () => {
             </Button>
           ))}
         </div>
-        <div className="mb-6 p-2">
-          <h2 className="text-xl font-bold mb-4">{currentSection}</h2>
+        <div className="mb-6 p-8">
           {loading ? (
             <LoadingSpinner />
           ) : error ? (

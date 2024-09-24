@@ -27,6 +27,16 @@
             parent.Children.Add(childNode);
             return childNode;
         }
+        public bool RemoveChild(TreeNode parent, T childData)
+        {
+            var childNode = parent.Children.FirstOrDefault(c => EqualityComparer<T>.Default.Equals(c.Data, childData));
+            if (childNode != null)
+            {
+                parent.Children.Remove(childNode);
+                return true;
+            }
+            return false;
+        }
 
         public void Traverse(TreeNode node, Action<T> action)
         {

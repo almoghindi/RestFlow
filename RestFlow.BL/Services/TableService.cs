@@ -1,12 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using RestFlow.BL.Factory;
+using RestFlow.Common.DataStructures;
 using RestFlow.DAL.Entities;
 using RestFlow.DAL.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RestFlow.BL.Services
 {
@@ -15,23 +11,49 @@ namespace RestFlow.BL.Services
         private readonly ITableRepository _tableRepository;
         private readonly IModelFactory _modelFactory;
         private readonly ILogger<TableService> _logger;
+        private readonly CustomGraph<Table> _tablesGraph;
 
-        public TableService(ITableRepository tableRepository ,IModelFactory modelFactory ,ILogger<TableService> logger)
+        public TableService(ITableRepository tableRepository, IModelFactory modelFactory, ILogger<TableService> logger)
         {
             _tableRepository = tableRepository;
             _modelFactory = modelFactory;
             _logger = logger;
+            _tablesGraph = new CustomGraph<Table>(table => table.TableId);
+        }
+
+        public async Task LoadTablesIntoGraph(int restaurantId)
+        {
+            try
+            {
+                _logger.LogInformation($"Loading tables for restaurant ID: {restaurantId} into the graph");
+                var tables = await _tableRepository.GetAllByRestaurantId(restaurantId);
+                foreach (var table in tables)
+                {
+                    _tablesGraph.AddNode(table);
+                }
+                _logger.LogInformation($"Successfully loaded {tables.Count()} tables into the graph");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error occurred while loading tables into the graph for restaurant ID: {restaurantId}");
+                throw;
+            }
         }
 
         public async Task<Table> GetById(int id)
         {
             try
             {
-                _logger.LogInformation($"Fetching Table with ID: {id}");
-                var table = await _tableRepository.GetById(id);
+                _logger.LogInformation($"Fetching Table with ID: {id} from the graph");
+                var table = _tablesGraph.GetNodeById(id);
                 if (table == null)
                 {
-                    _logger.LogWarning($"Table with ID: {id} not found");
+                    _logger.LogWarning($"Table with ID: {id} not found in the graph, querying the repository");
+                    table = await _tableRepository.GetById(id);
+                    if (table != null)
+                    {
+                        _tablesGraph.AddNode(table);
+                    }
                 }
                 return table;
             }
@@ -46,9 +68,15 @@ namespace RestFlow.BL.Services
         {
             try
             {
-                _logger.LogInformation("Fetching all Tables");
-                var tables = await _tableRepository.GetAllByRestaurantId(restaurantId);
-                return tables;
+                _logger.LogInformation("Fetching all Tables from the graph");
+                var tablesInGraph = _tablesGraph.GetAllNodes();
+                if (tablesInGraph == null || !tablesInGraph.Any())
+                {
+                    _logger.LogInformation("No tables found in the graph, loading from the repository");
+                    await LoadTablesIntoGraph(restaurantId);
+                    return _tablesGraph.GetAllNodes();
+                }
+                return tablesInGraph;
             }
             catch (Exception ex)
             {
@@ -61,9 +89,12 @@ namespace RestFlow.BL.Services
         {
             try
             {
-                _logger.LogInformation($"Adding Table : {tableNumber}");
+                _logger.LogInformation($"Adding Table: {tableNumber}");
                 var table = _modelFactory.CreateTable(tableNumber, capacity, restaurantId);
+
                 await _tableRepository.Add(table);
+                _tablesGraph.AddNode(table);
+
                 _logger.LogInformation($"Successfully added Table with ID: {table.TableId}");
             }
             catch (Exception ex)
@@ -78,8 +109,11 @@ namespace RestFlow.BL.Services
             try
             {
                 _logger.LogInformation($"Deleting Table with ID: {id}");
+
                 await _tableRepository.Delete(id);
-                _logger.LogInformation($"Successfully deleted Table with ID: {id}");
+                _tablesGraph.RemoveNode(id);
+
+                _logger.LogInformation($"Successfully deleted Table with ID: {id} from the repository and graph");
             }
             catch (Exception ex)
             {

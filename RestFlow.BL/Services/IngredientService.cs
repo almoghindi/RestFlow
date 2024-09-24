@@ -1,12 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using RestFlow.BL.Factory;
+using RestFlow.Common.DataStructures;
 using RestFlow.DAL.Entities;
 using RestFlow.DAL.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RestFlow.BL.Services
 {
@@ -15,12 +11,14 @@ namespace RestFlow.BL.Services
         private readonly IIngredientRepository _ingredientRepository;
         private readonly IModelFactory _modelFactory;
         private readonly ILogger<IngredientService> _logger;
+        private readonly CustomTree<Ingredient> _ingredientTree;
 
         public IngredientService(IIngredientRepository ingredientRepository, IModelFactory modelFactory, ILogger<IngredientService> logger)
         {
             _ingredientRepository = ingredientRepository;
             _modelFactory = modelFactory;
             _logger = logger;
+            _ingredientTree = new CustomTree<Ingredient>(null);
         }
 
         public async Task<Ingredient> GetById(int id)
@@ -47,12 +45,23 @@ namespace RestFlow.BL.Services
             try
             {
                 _logger.LogInformation("Attempting to retrieve all ingredients");
-                return await _ingredientRepository.GetAllByRestaurantId(restaurantId);
+                var ingredients = await _ingredientRepository.GetAllByRestaurantId(restaurantId);
+
+                PopulateTree(ingredients);
+                return ingredients;
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occurred while retrieving all ingredients");
                 throw;
+            }
+        }
+
+        private void PopulateTree(IEnumerable<Ingredient> ingredients)
+        {
+            foreach (var ingredient in ingredients)
+            {
+                _ingredientTree.AddChild(_ingredientTree.Root, ingredient);
             }
         }
 
@@ -63,6 +72,8 @@ namespace RestFlow.BL.Services
                 _logger.LogInformation($"Attempting to add a new ingredient: {name}");
                 Ingredient ingredient = _modelFactory.CreateIngredient(name, quantity, pricePerUnit, description, restaurantId);
                 await _ingredientRepository.Add(ingredient);
+
+                _ingredientTree.AddChild(_ingredientTree.Root, ingredient);
             }
             catch (Exception ex)
             {
@@ -89,10 +100,12 @@ namespace RestFlow.BL.Services
                     throw new KeyNotFoundException("Ingredient not found.");
                 }
 
-                Ingredient ingredient = new() { IngredientId = id, Name = name, Quantity = quantity, PricePerUnit = pricePerUnit, Description = description, IsAvailable = quantity > 0, RestaurantId = restaurantId};
+                Ingredient ingredient = new() { IngredientId = id, Name = name, Quantity = quantity, PricePerUnit = pricePerUnit, Description = description, IsAvailable = quantity > 0, RestaurantId = restaurantId };
                 await _ingredientRepository.Update(ingredient);
-                _logger.LogInformation("Ingredient updated successfully in BL.");
 
+                _ingredientTree.RemoveChild(_ingredientTree.Root, existingIngredient);
+                _ingredientTree.AddChild(_ingredientTree.Root, ingredient);
+                _logger.LogInformation("Ingredient updated successfully in BL.");
             }
             catch (Exception ex)
             {
@@ -106,7 +119,13 @@ namespace RestFlow.BL.Services
             try
             {
                 _logger.LogInformation($"Attempting to delete ingredient with ID {id}");
+                var ingredient = await _ingredientRepository.GetById(id);
                 await _ingredientRepository.Delete(id);
+
+                if (ingredient != null)
+                {
+                    _ingredientTree.RemoveChild(_ingredientTree.Root, ingredient);
+                }
             }
             catch (Exception ex)
             {
@@ -121,6 +140,13 @@ namespace RestFlow.BL.Services
             {
                 _logger.LogInformation($"Attempting to add quantity {quantityToAdd} to ingredient with ID {id}");
                 await _ingredientRepository.AddQuantity(id, quantityToAdd);
+                var ingredient = await _ingredientRepository.GetById(id);
+                if (ingredient != null)
+                {
+                    _ingredientTree.RemoveChild(_ingredientTree.Root, ingredient);
+                    ingredient.Quantity += quantityToAdd;
+                    _ingredientTree.AddChild(_ingredientTree.Root, ingredient);
+                }
             }
             catch (Exception ex)
             {
@@ -135,6 +161,13 @@ namespace RestFlow.BL.Services
             {
                 _logger.LogInformation($"Attempting to remove quantity {quantityToRemove} from ingredient with ID {id}");
                 await _ingredientRepository.RemoveQuantity(id, quantityToRemove);
+                var ingredient = await _ingredientRepository.GetById(id);
+                if (ingredient != null)
+                {
+                    _ingredientTree.RemoveChild(_ingredientTree.Root, ingredient);
+                    ingredient.Quantity -= quantityToRemove;
+                    _ingredientTree.AddChild(_ingredientTree.Root, ingredient);
+                }
             }
             catch (Exception ex)
             {

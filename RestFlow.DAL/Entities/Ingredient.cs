@@ -32,9 +32,8 @@ namespace RestFlow.DAL.Entities
 
         public bool IsAvailable { get; set; }
 
-        [JsonIgnore]
-        public ICollection<Dish> Dishes { get; set; } = new List<Dish>();
-
+        //[JsonIgnore]
+        public ICollection<Dish> Dishes { get; set; } = new LinkedList<Dish>();
         public void AddQuantity(decimal quantityToAdd)
         {
             Quantity += quantityToAdd;

@@ -15898,3 +15898,195 @@ Category-dish index initialized.
 Fetching all dishes from BL.
 Fetching all dishes from DAL.
 Successfully fetched all dishes.
+Now listening on: https://localhost:7214
+Now listening on: http://localhost:5076
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\almog\source\repos\RestFlow\RestFlow.API
+Attempting to log in user: almog
+Login failed: invalid password
+Failed to log in user: almog
+Attempting to log in user: almog
+Login failed: invalid password
+Failed to log in user: almog
+Attempting to log in user: strring
+Login failed: invalid username or restaurant ID
+Failed to log in user: strring
+Attempting to log in user: strring
+Login failed: invalid username or restaurant ID
+Failed to log in user: strring
+Attempting to log in user: string
+Login failed: invalid password
+Failed to log in user: string
+Attempting to log in user: string
+Login failed: invalid password
+Failed to log in user: string
+Attempting to log in user: string
+Login failed: invalid password
+Failed to log in user: string
+Attempting to log in user: string
+Login failed: invalid password
+Failed to log in user: string
+Attempting to log in user: string
+Login failed: invalid password
+Failed to log in user: string
+Attempting to log in user: string
+Login failed: invalid password
+Failed to log in user: string
+Attempting to sign up user: almog
+Signed up succesfully
+Failed to sign up user: almog
+Attempting to log in user: almog
+Login failed: invalid password
+Failed to log in user: almog
+Attempting to log in user: almog
+Login failed: invalid password
+Failed to log in user: almog
+Attempting to log in user: almog
+Login failed: invalid password
+Failed to log in user: almog
+Attempting to log in user: almog
+Login failed: invalid password
+Failed to log in user: almog
+Attempting to sign up user: almog
+Signed up succesfully
+Failed to sign up user: almog
+Attempting to sign up user: almog
+Signed up succesfully
+Failed to sign up user: almog
+Attempting to sign up user: almoghindi
+Signed up succesfully
+Failed to sign up user: almoghindi
+Attempting to sign up user: almoghindi
+Signed up succesfully
+Failed to sign up user: almoghindi
+Attempting to sign up user: almoghindi
+Signed up succesfully
+Failed to sign up user: almoghindi
+Attempting to log in user: almoghindi
+Login failed: invalid username or restaurant ID
+Failed to log in user: almoghindi
+Attempting to log in user: almoghindi
+Login failed: invalid username or restaurant ID
+Failed to log in user: almoghindi
+Attempting to log in user: almoghindi
+Login failed: invalid username or restaurant ID
+Failed to log in user: almoghindi
+Attempting to log in user: almoghindi
+Login failed: invalid username or restaurant ID
+Failed to log in user: almoghindi
+Attempting to log in user: almoghindi
+Login failed: invalid username or restaurant ID
+Failed to log in user: almoghindi
+Attempting to log in user: almog
+Login failed: invalid password
+Failed to log in user: almog
+Attempting to log in user: string
+Login failed: invalid password
+Failed to log in user: string
+Attempting to log in user: string
+Login failed: invalid password
+Failed to log in user: string
+Attempting to log in user: almog
+Login failed: invalid password
+Failed to log in user: almog
+Attempting to log in user: almoghindi
+Login failed: invalid username or restaurant ID
+Failed to log in user: almoghindi
+Attempting to log in user: almoghindi
+Login failed: invalid username or restaurant ID
+Failed to log in user: almoghindi
+Attempting to log in user: almog
+Login failed: invalid password
+Failed to log in user: almog
+Attempting to log in user: string
+Login failed: invalid password
+Failed to log in user: string
+Attempting to log in user: string
+Login failed: invalid password
+Failed to log in user: string
+Attempting to log in user: stringalmog
+Login failed: invalid username or restaurant ID
+Failed to log in user: stringalmog
+Attempting to log in user: almog
+Login failed: invalid password
+Failed to log in user: almog
+Attempting to log in user: almoghindi
+Login failed: invalid username or restaurant ID
+Failed to log in user: almoghindi
+Attempting to log in user: string
+Login failed: invalid password
+Failed to log in user: string
+Attempting to log in user: almog
+Logged in successfully with RestaurantId: 1
+User logged in successfully: almog
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.
+Fetching all categories from BL.
+GetAllByRestaurantId
+Categories fetched successfully from BL.
+Attempting to retrieve all ingredients
+Getting all ingredients
+Attempting to fetch all Waiters
+Fetching all Waiters
+Fetching all Tables
+Initializing category-dish index.
+Fetching all dishes from DAL.
+Category-dish index initialized.
+Fetching all dishes from BL.
+Fetching all dishes from DAL.
+Successfully fetched all dishes.

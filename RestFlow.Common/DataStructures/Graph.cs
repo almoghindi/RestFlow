@@ -1,89 +1,137 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RestFlow.Common.DataStructures
 {
-    using System.Collections.Generic;
-
     public class CustomGraph<T>
     {
-        private readonly Dictionary<T, List<T>> adjacencyList;
+        private readonly Dictionary<int, T> vertices;
+        private readonly Dictionary<int, List<int>> adjacencyList;
+        private readonly Func<T, int> getId;
 
-        public CustomGraph()
+        public CustomGraph(Func<T, int> getIdFunction)
         {
-            adjacencyList = new Dictionary<T, List<T>>();
+            vertices = new Dictionary<int, T>();
+            adjacencyList = new Dictionary<int, List<int>>();
+            getId = getIdFunction;
         }
-
-        public void AddVertex(T vertex)
+        public void AddNode(T vertex)
         {
-            if (!adjacencyList.ContainsKey(vertex))
+            int id = getId(vertex);
+            if (!vertices.ContainsKey(id))
             {
-                adjacencyList[vertex] = new List<T>();
+                vertices[id] = vertex;
+                adjacencyList[id] = new List<int>();
             }
         }
 
-        public void AddEdge(T vertex1, T vertex2)
+        public void RemoveNode(int id)
         {
-            if (!adjacencyList.ContainsKey(vertex1) || !adjacencyList.ContainsKey(vertex2))
+            if (vertices.ContainsKey(id))
+            {
+                foreach (var adjacent in adjacencyList[id])
+                {
+                    adjacencyList[adjacent].Remove(id);
+                }
+                adjacencyList.Remove(id);
+                vertices.Remove(id);
+            }
+        }
+
+        public void AddEdge(int vertex1Id, int vertex2Id)
+        {
+            if (!adjacencyList.ContainsKey(vertex1Id) || !adjacencyList.ContainsKey(vertex2Id))
+            {
+                throw new ArgumentException("One or both vertices do not exist.");
+            }
+
+            adjacencyList[vertex1Id].Add(vertex2Id);
+            adjacencyList[vertex2Id].Add(vertex1Id);
+        }
+
+        public void RemoveEdge(int vertex1Id, int vertex2Id)
+        {
+            if (adjacencyList.ContainsKey(vertex1Id) && adjacencyList.ContainsKey(vertex2Id))
+            {
+                adjacencyList[vertex1Id].Remove(vertex2Id);
+                adjacencyList[vertex2Id].Remove(vertex1Id);
+            }
+        }
+
+        public T GetNodeById(int id)
+        {
+            if (vertices.ContainsKey(id))
+            {
+                return vertices[id];
+            }
+            return default;
+        }
+
+        public IEnumerable<T> GetAllNodes()
+        {
+            return vertices.Values.ToList();
+        }
+
+        public IEnumerable<T> GetNeighbors(int id)
+        {
+            if (!adjacencyList.ContainsKey(id))
             {
                 throw new ArgumentException("Vertex does not exist.");
             }
 
-            adjacencyList[vertex1].Add(vertex2);
-            adjacencyList[vertex2].Add(vertex1); // For undirected graph
+            return adjacencyList[id].Select(neighborId => vertices[neighborId]);
         }
 
-        public IEnumerable<T> GetNeighbors(T vertex)
+        public void TraverseBFS(int startVertexId, Action<T> action)
         {
-            if (adjacencyList.ContainsKey(vertex))
+            if (!vertices.ContainsKey(startVertexId))
             {
-                return adjacencyList[vertex];
+                throw new ArgumentException("Start vertex does not exist.");
             }
-            throw new ArgumentException("Vertex does not exist.");
-        }
 
-        public void TraverseBFS(T startVertex, Action<T> action)
-        {
-            var visited = new HashSet<T>();
-            var queue = new Queue<T>();
-            queue.Enqueue(startVertex);
-            visited.Add(startVertex);
+            var visited = new HashSet<int>();
+            var queue = new Queue<int>();
+            queue.Enqueue(startVertexId);
+            visited.Add(startVertexId);
 
             while (queue.Count > 0)
             {
-                var vertex = queue.Dequeue();
-                action(vertex);
+                var vertexId = queue.Dequeue();
+                action(vertices[vertexId]);
 
-                foreach (var neighbor in adjacencyList[vertex])
+                foreach (var neighborId in adjacencyList[vertexId])
                 {
-                    if (!visited.Contains(neighbor))
+                    if (!visited.Contains(neighborId))
                     {
-                        visited.Add(neighbor);
-                        queue.Enqueue(neighbor);
+                        visited.Add(neighborId);
+                        queue.Enqueue(neighborId);
                     }
                 }
             }
         }
 
-        public void TraverseDFS(T startVertex, Action<T> action)
+        public void TraverseDFS(int startVertexId, Action<T> action)
         {
-            var visited = new HashSet<T>();
-            TraverseDFSRecursive(startVertex, action, visited);
+            if (!vertices.ContainsKey(startVertexId))
+            {
+                throw new ArgumentException("Start vertex does not exist.");
+            }
+
+            var visited = new HashSet<int>();
+            TraverseDFSRecursive(startVertexId, action, visited);
         }
 
-        private void TraverseDFSRecursive(T vertex, Action<T> action, HashSet<T> visited)
+        private void TraverseDFSRecursive(int vertexId, Action<T> action, HashSet<int> visited)
         {
-            if (visited.Contains(vertex)) return;
+            if (visited.Contains(vertexId)) return;
 
-            action(vertex);
-            visited.Add(vertex);
+            action(vertices[vertexId]);
+            visited.Add(vertexId);
 
-            foreach (var neighbor in adjacencyList[vertex])
+            foreach (var neighborId in adjacencyList[vertexId])
             {
-                TraverseDFSRecursive(neighbor, action, visited);
+                TraverseDFSRecursive(neighborId, action, visited);
             }
         }
     }
